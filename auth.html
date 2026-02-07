@@ -2,236 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ElevateU | Sign in</title>
+  <title>ElevateU – Sign in</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./auth.css" />
 </head>
 
 <body>
-  <div class="eu-authPage">
-    <a class="eu-authBrand" href="./index.html" aria-label="Back to home">
-      <img src="./assets/elevateu-logo.png" alt="ElevateU logo" class="eu-authLogo" />
-      <span class="eu-authBrandText">ElevateU</span>
+  <main class="auth">
+    <a class="auth-brand" href="./index.html" aria-label="Back to home">
+      <img class="auth-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
+      <span class="auth-brand-text">ElevateU</span>
     </a>
 
-    <main class="eu-authCard" role="main">
-      <header class="eu-authHeader">
-        <h1 class="eu-authTitle" id="authTitle">Welcome back</h1>
-        <p class="eu-authSubtitle" id="authSubtitle">
-          Sign in using email/password or a provider.
-        </p>
-      </header>
-
-      <!-- Tabs -->
-      <div class="eu-authTabs" role="tablist" aria-label="Authentication">
-        <button class="eu-tab is-active" type="button" role="tab" aria-selected="true" data-mode="signin">
-          Sign in
-        </button>
-        <button class="eu-tab" type="button" role="tab" aria-selected="false" data-mode="signup">
-          Sign up
-        </button>
+    <section class="auth-card" aria-label="Authentication">
+      <div class="auth-tabs" role="tablist" aria-label="Sign in or sign up">
+        <button class="auth-tab" id="tabSignIn" type="button" role="tab" aria-controls="panelSignIn">Sign in</button>
+        <button class="auth-tab" id="tabSignUp" type="button" role="tab" aria-controls="panelSignUp">Sign up</button>
       </div>
 
-      <!-- Providers -->
-      <section class="eu-providerBlock" aria-label="Third party login">
-        <div class="eu-providerGrid">
-          <button class="eu-providerBtn" type="button" data-provider="google">
-            <span class="eu-providerIcon" aria-hidden="true">G</span>
-            Continue with Google
-          </button>
+      <h1 class="auth-title" id="authTitle">Welcome back</h1>
+      <p class="auth-sub" id="authSub">Sign in using email/password or a provider.</p>
 
-          <button class="eu-providerBtn" type="button" data-provider="github">
-            <span class="eu-providerIcon" aria-hidden="true">⌂</span>
-            Continue with GitHub
-          </button>
-
-          <button class="eu-providerBtn" type="button" data-provider="apple">
-            <span class="eu-providerIcon" aria-hidden="true"></span>
-            Continue with Apple
-          </button>
-
-          <button class="eu-providerBtn" type="button" data-provider="discord">
-            <span class="eu-providerIcon" aria-hidden="true">◒</span>
-            Continue with Discord
-          </button>
+      <!-- SIGN IN -->
+      <div id="panelSignIn" role="tabpanel" aria-labelledby="tabSignIn">
+        <div class="auth-providers">
+          <button class="auth-provider" type="button">Continue with Google</button>
+          <button class="auth-provider" type="button">Continue with GitHub</button>
+          <button class="auth-provider" type="button">Continue with Apple</button>
+          <button class="auth-provider" type="button">Continue with Discord</button>
         </div>
 
-        <div class="eu-divider">
-          <span>or</span>
-        </div>
-      </section>
+        <div class="auth-divider"><span>or</span></div>
 
-      <!-- Email + Password -->
-      <form class="eu-form" id="authForm" autocomplete="on" novalidate>
-        <div class="eu-field">
-          <label class="eu-label" for="email">Email</label>
-          <input class="eu-input" id="email" name="email" type="email" placeholder="you@example.com" required />
-          <div class="eu-help" id="emailHelp" aria-live="polite"></div>
-        </div>
-
-        <div class="eu-field">
-          <label class="eu-label" for="password">Password</label>
-          <div class="eu-passwordRow">
-            <input class="eu-input" id="password" name="password" type="password" placeholder="••••••••" required minlength="6" />
-            <button class="eu-eye" type="button" id="togglePw" aria-label="Show password">👁</button>
-          </div>
-          <div class="eu-help" id="passwordHelp" aria-live="polite"></div>
-        </div>
-
-        <div class="eu-row">
-          <label class="eu-check">
-            <input type="checkbox" id="remember" />
-            <span>Remember me</span>
+        <form class="auth-form" action="#" method="post" autocomplete="on">
+          <label class="auth-label">
+            Email
+            <input class="auth-input" name="email" type="email" placeholder="you@example.com" required />
           </label>
 
-          <a class="eu-link" href="./forgot-password.html">Forgot password?</a>
+          <label class="auth-label">
+            Password
+            <div class="auth-pass">
+              <input class="auth-input" id="signinPass" name="password" type="password" placeholder="••••••••" required />
+              <button class="auth-eye" type="button" aria-label="Show password" data-toggle-pass="signinPass">👁</button>
+            </div>
+          </label>
+
+          <div class="auth-row">
+            <label class="auth-check">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+
+            <a class="auth-link" href="#">Forgot password?</a>
+          </div>
+
+          <button class="auth-submit" type="submit">Sign in</button>
+        </form>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="panelSignUp" role="tabpanel" aria-labelledby="tabSignUp" hidden>
+        <div class="auth-providers">
+          <button class="auth-provider" type="button">Continue with Google</button>
+          <button class="auth-provider" type="button">Continue with GitHub</button>
+          <button class="auth-provider" type="button">Continue with Apple</button>
+          <button class="auth-provider" type="button">Continue with Discord</button>
         </div>
 
-        <button class="eu-primary" type="submit" id="submitBtn">
-          Sign in
-        </button>
+        <div class="auth-divider"><span>or</span></div>
 
-        <p class="eu-footnote" id="footnote">
-          New here? Create an account to personalise your learning.
-        </p>
-      </form>
-    </main>
+        <form class="auth-form" action="#" method="post" autocomplete="on">
+          <label class="auth-label">
+            Email
+            <input class="auth-input" name="email" type="email" placeholder="you@example.com" required />
+          </label>
 
-    <footer class="eu-authFooter">
-      <small>© <span id="year"></span> ElevateU</small>
-    </footer>
-  </div>
+          <label class="auth-label">
+            Password
+            <div class="auth-pass">
+              <input class="auth-input" id="signupPass" name="password" type="password" placeholder="Create a password" required />
+              <button class="auth-eye" type="button" aria-label="Show password" data-toggle-pass="signupPass">👁</button>
+            </div>
+          </label>
+
+          <label class="auth-label">
+            Confirm password
+            <div class="auth-pass">
+              <input class="auth-input" id="signupPass2" name="password2" type="password" placeholder="Repeat your password" required />
+              <button class="auth-eye" type="button" aria-label="Show password" data-toggle-pass="signupPass2">👁</button>
+            </div>
+          </label>
+
+          <label class="auth-check auth-check-wide">
+            <input type="checkbox" required />
+            <span>I agree to the Terms and Privacy Policy</span>
+          </label>
+
+          <button class="auth-submit" type="submit">Create account</button>
+        </form>
+      </div>
+
+      <p class="auth-foot" id="authFoot">
+        New here? Create an account to personalise your learning.
+      </p>
+    </section>
+
+    <footer class="auth-footer">© <span id="year"></span> ElevateU</footer>
+  </main>
 
   <script>
-    // --------- CONFIG (edit routes here) ---------
-    const ROUTES = {
-      hub: "./hub.html",                    // returning users go here
-      personalisation: "./personalisation.html", // new users go here
-      providerCallback: "./oauth-callback.html"  // optional placeholder
-    };
-
-    // Set year
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mode switching
-    const tabs = document.querySelectorAll(".eu-tab");
+    // Tabs + URL mode
+    const qs = new URLSearchParams(location.search);
+    const initialMode = (qs.get("mode") || "signin").toLowerCase();
+
+    const tabSignIn = document.getElementById("tabSignIn");
+    const tabSignUp = document.getElementById("tabSignUp");
+    const panelSignIn = document.getElementById("panelSignIn");
+    const panelSignUp = document.getElementById("panelSignUp");
+
     const title = document.getElementById("authTitle");
-    const subtitle = document.getElementById("authSubtitle");
-    const submitBtn = document.getElementById("submitBtn");
-    const footnote = document.getElementById("footnote");
+    const sub = document.getElementById("authSub");
+    const foot = document.getElementById("authFoot");
 
-    let mode = "signin"; // "signin" | "signup"
+    function setMode(mode){
+      const isSignup = mode === "signup";
 
-    function setMode(nextMode){
-      mode = nextMode;
+      tabSignIn.classList.toggle("active", !isSignup);
+      tabSignUp.classList.toggle("active", isSignup);
 
-      tabs.forEach(t => {
-        const active = t.dataset.mode === mode;
-        t.classList.toggle("is-active", active);
-        t.setAttribute("aria-selected", String(active));
-      });
+      tabSignIn.setAttribute("aria-selected", String(!isSignup));
+      tabSignUp.setAttribute("aria-selected", String(isSignup));
 
-      if(mode === "signin"){
-        document.title = "ElevateU | Sign in";
-        title.textContent = "Welcome back";
-        subtitle.textContent = "Sign in using email/password or a provider.";
-        submitBtn.textContent = "Sign in";
-        footnote.textContent = "New here? Create an account to personalise your learning.";
-      }else{
-        document.title = "ElevateU | Sign up";
+      panelSignIn.toggleAttribute("hidden", isSignup);
+      panelSignUp.toggleAttribute("hidden", !isSignup);
+
+      if(isSignup){
+        document.title = "ElevateU – Sign up";
         title.textContent = "Create your account";
-        subtitle.textContent = "Sign up using email/password or a provider.";
-        submitBtn.textContent = "Sign up";
-        footnote.textContent = "Already have an account? Sign in instead.";
+        sub.textContent = "Sign up using email/password or a provider.";
+        foot.textContent = "Already have an account? Use Sign in.";
+      } else {
+        document.title = "ElevateU – Sign in";
+        title.textContent = "Welcome back";
+        sub.textContent = "Sign in using email/password or a provider.";
+        foot.textContent = "New here? Create an account to personalise your learning.";
       }
 
-      clearErrors();
+      // Keep URL in sync (no page reload)
+      const url = new URL(location.href);
+      url.searchParams.set("mode", isSignup ? "signup" : "signin");
+      history.replaceState({}, "", url);
     }
 
-    tabs.forEach(t => t.addEventListener("click", () => setMode(t.dataset.mode)));
+    tabSignIn.addEventListener("click", () => setMode("signin"));
+    tabSignUp.addEventListener("click", () => setMode("signup"));
+    setMode(initialMode === "signup" ? "signup" : "signin");
 
-    // Password toggle
-    const pw = document.getElementById("password");
-    const togglePw = document.getElementById("togglePw");
-    togglePw.addEventListener("click", () => {
-      const isPw = pw.type === "password";
-      pw.type = isPw ? "text" : "password";
-      togglePw.textContent = isPw ? "🙈" : "👁";
-      togglePw.setAttribute("aria-label", isPw ? "Hide password" : "Show password");
-    });
-
-    // Basic validation UI
-    const email = document.getElementById("email");
-    const emailHelp = document.getElementById("emailHelp");
-    const pwHelp = document.getElementById("passwordHelp");
-
-    function clearErrors(){
-      emailHelp.textContent = "";
-      pwHelp.textContent = "";
-      email.classList.remove("is-error");
-      pw.classList.remove("is-error");
-    }
-
-    function validate(){
-      clearErrors();
-      let ok = true;
-
-      if(!email.value.trim() || !email.checkValidity()){
-        ok = false;
-        email.classList.add("is-error");
-        emailHelp.textContent = "Please enter a valid email address.";
-      }
-
-      if(!pw.value.trim() || pw.value.length < 6){
-        ok = false;
-        pw.classList.add("is-error");
-        pwHelp.textContent = "Password must be at least 6 characters.";
-      }
-
-      return ok;
-    }
-
-    // --------- AUTH FLOW (stubbed) ---------
-    // Replace these with real backend checks later.
-    function isReturningUser(emailValue){
-      // Demo logic:
-      // - any email ending with "@returning.com" is treated as returning user
-      // - everything else is treated as new user
-      return emailValue.toLowerCase().endsWith("@returning.com");
-    }
-
-    function redirectAfterAuth(emailValue){
-      // If new user -> personalisation questionnaire
-      // If returning -> hub
-      const returning = isReturningUser(emailValue);
-      window.location.href = returning ? ROUTES.hub : ROUTES.personalisation;
-    }
-
-    // Form submit
-    const form = document.getElementById("authForm");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if(!validate()) return;
-
-      // In real life:
-      // - mode === "signup": create user, then send to personalisation
-      // - mode === "signin": sign in, then send to hub
-      // Here we follow your rule: new user -> personalisation, returning -> hub.
-      redirectAfterAuth(email.value.trim());
-    });
-
-    // Provider buttons
-    document.querySelectorAll("[data-provider]").forEach(btn => {
+    // Show/hide password
+    document.querySelectorAll("[data-toggle-pass]").forEach(btn => {
       btn.addEventListener("click", () => {
-        const provider = btn.getAttribute("data-provider");
-
-        // In real life, you’d redirect to your OAuth endpoint like:
-        // window.location.href = `/auth/${provider}`;
-        // For now we simulate:
-        // - Providers also follow your rule: new -> personalisation, returning -> hub
-        // We'll just send to a placeholder callback.
-        const params = new URLSearchParams({ provider });
-        window.location.href = `${ROUTES.providerCallback}?${params.toString()}`;
+        const id = btn.getAttribute("data-toggle-pass");
+        const input = document.getElementById(id);
+        if(!input) return;
+        input.type = input.type === "password" ? "text" : "password";
       });
     });
   </script>
