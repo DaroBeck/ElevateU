@@ -44,7 +44,7 @@ button{ font-family: inherit; }
   margin: 0 auto;
   padding: 0 22px;
   display:grid;
-  grid-template-columns: 220px 1fr 420px; /* brand | nav | right */
+  grid-template-columns: 220px 1fr 420px;
   align-items:center;
   gap: 16px;
 }
@@ -158,7 +158,6 @@ button{ font-family: inherit; }
   gap: 10px;
   flex: 0 0 auto;
 }
-
 .eu-auth-link{
   padding: 10px 16px;
   border-radius: 999px;
@@ -208,11 +207,11 @@ button{ font-family: inherit; }
 .eu-burger.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
 /* =========================
-   DROPDOWNS (centered under clicked item)
+   DROPDOWNS (CENTERED ON PAGE)
    ========================= */
 .eu-dropdown{
-  position: absolute;
-  top: calc(100% + 14px);
+  position: fixed;
+  top: calc(var(--headerH) + 16px);
   left: 50%;
   transform: translateX(-50%);
   width: min(980px, calc(100vw - 32px));
@@ -290,67 +289,89 @@ button{ font-family: inherit; }
 }
 
 /* =========================
-   Subject -> Exam boards panel (SaveMyExams style)
+   SMALL POPUP MODAL FOR BOARDS
    ========================= */
-.eu-subpanel{
-  position: absolute;
-  inset: 14px;
-  background: rgba(8, 7, 24, .96);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+.eu-modal{
+  position: fixed;
+  inset: 0;
   display: none;
-  z-index: 95;
+  z-index: 200;
 }
-.eu-subpanel.show{ display:block; }
+.eu-modal.show{ display:block; }
 
-.eu-subpanel-inner{
+.eu-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+}
+
+.eu-modal-dialog{
+  position: absolute;
+  top: calc(var(--headerH) + 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, calc(100vw - 34px));
+  background: rgba(8, 7, 24, .96);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
   padding: 14px;
 }
 
-.eu-back{
+.eu-modal-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 4px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.eu-modal-subject{
+  font-weight: 950;
+  font-size: 22px;
+  letter-spacing: .2px;
+}
+.eu-modal-sub{
+  margin-top: 2px;
+  font-weight: 700;
+  opacity: .82;
+  font-size: 13px;
+}
+
+.eu-modal-close{
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.08);
   color: var(--text);
+  width: 38px;
+  height: 38px;
   border-radius: 12px;
-  padding: 8px 12px;
-  font-weight: 850;
   cursor: pointer;
+  font-weight: 900;
 }
-.eu-back:hover{ background: rgba(255,255,255,.12); }
+.eu-modal-close:hover{ background: rgba(255,255,255,.12); }
 
-.eu-subpanel-title{
-  margin-top: 10px;
-  font-weight: 950;
-  font-size: 28px;
-  letter-spacing: .2px;
-}
-.eu-subpanel-sub{
-  margin-top: 4px;
-  font-weight: 750;
-  opacity: .85;
-}
-
-/* BIG boards in columns */
-.eu-examBoards{
+.eu-modal-boards{
   margin-top: 14px;
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
+/* big board buttons, but contained in small modal */
 .eu-boardCard{
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding: 20px 16px;
-  border-radius: 18px;
+  padding: 16px 14px;
+  border-radius: 16px;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
   font-weight: 950;
-  font-size: 20px;
-  letter-spacing: 1.6px;
+  font-size: 18px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 .eu-boardCard:hover{
@@ -376,14 +397,12 @@ button{ font-family: inherit; }
   grid-template-columns: 1.2fr .8fr;
   gap: 14px;
 }
-
 .eu-drawer-section{
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 14px;
   padding: 12px;
 }
-
 .eu-drawer-title{
   color: rgba(255,255,255,.78);
   font-weight: 900;
@@ -391,7 +410,6 @@ button{ font-family: inherit; }
   letter-spacing: .6px;
   margin-bottom: 8px;
 }
-
 .eu-drawer-link{
   display:block;
   padding: 10px 10px;
@@ -548,12 +566,10 @@ button{ font-family: inherit; }
   margin: 0 auto;
   padding: 0 22px;
 }
-
 .eu-section{
   padding: 70px 0;
   background: linear-gradient(180deg, rgba(0,0,0,0), rgba(255,255,255,.02));
 }
-
 .eu-h2{
   margin: 0 0 22px;
   font-size: 34px;
@@ -567,7 +583,6 @@ button{ font-family: inherit; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
 }
-
 .eu-card{
   background: rgba(255,255,255,.04);
   border: 3px solid rgba(255,255,255,.14);
@@ -587,7 +602,6 @@ button{ font-family: inherit; }
   transform: translateY(-2px);
   text-decoration:none;
 }
-
 .eu-card-icon{
   width: 62px;
   height: 62px;
@@ -600,7 +614,6 @@ button{ font-family: inherit; }
   color: rgba(255,255,255,.92);
 }
 .eu-card-icon svg{ width: 34px; height: 34px; }
-
 .eu-card-title{
   font-weight: 900;
   letter-spacing: 2px;
@@ -608,7 +621,6 @@ button{ font-family: inherit; }
   font-size: 16px;
   line-height: 1.2;
 }
-
 .eu-card-text{
   color: rgba(255,255,255,.80);
   font-weight: 650;
@@ -640,21 +652,18 @@ button{ font-family: inherit; }
     radial-gradient(800px 400px at 50% 30%, rgba(140,90,255,.14), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,0));
 }
-
 .eu-cta-inner{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 22px;
   text-align:center;
 }
-
 .eu-cta-title{
   margin: 0 0 18px;
   font-size: clamp(26px, 3.4vw, 44px);
   font-weight: 900;
   letter-spacing: .2px;
 }
-
 .eu-cta-btn{
   display:inline-flex;
   align-items:center;
@@ -676,7 +685,6 @@ button{ font-family: inherit; }
   background: #000020;
   border-top: 1px solid rgba(255,255,255,.08);
 }
-
 .eu-footer-inner{
   max-width: 1280px;
   margin: 0 auto;
@@ -686,7 +694,6 @@ button{ font-family: inherit; }
   gap: 24px;
   align-items:start;
 }
-
 .eu-footer-logoRow{
   display:flex;
   align-items:center;
@@ -712,20 +719,17 @@ button{ font-family: inherit; }
   color: rgba(255,255,255,.92);
   text-underline-offset: 5px;
 }
-
 .eu-footer-cols{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
-
 .eu-footer-title{
   font-weight: 900;
   letter-spacing: .6px;
   margin-bottom: 10px;
   opacity: .92;
 }
-
 .eu-footer-link{
   display:block;
   color: rgba(255,255,255,.78);
@@ -737,14 +741,12 @@ button{ font-family: inherit; }
   text-decoration: underline;
   text-underline-offset: 6px;
 }
-
 .eu-social-row{
   display:flex;
   justify-content:flex-end;
   gap: 10px;
   padding-top: 8px;
 }
-
 .eu-social{
   width: 34px;
   height: 34px;
@@ -754,7 +756,6 @@ button{ font-family: inherit; }
   display:inline-block;
 }
 .eu-social:hover{ background: rgba(255,255,255,.10); }
-
 .eu-footer-bottom{
   max-width: 1280px;
   margin: 0 auto;
