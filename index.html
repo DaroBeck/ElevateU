@@ -55,7 +55,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT: Panel (switches between Other Subjects and Exam Boards view) -->
+              <!-- RIGHT: Panel -->
               <div class="eu-dd-col eu-dd-col--panel">
                 <!-- Default RIGHT view: Other Subjects -->
                 <div class="eu-rightview eu-rightview--other">
@@ -102,21 +102,17 @@
                   </div>
                 </div>
 
-                <!-- Subject RIGHT view: Exam boards -->
+                <!-- Subject RIGHT view: Exam boards (NAMES ONLY) -->
                 <div class="eu-rightview eu-rightview--boards" hidden>
                   <div class="eu-subpanel-head">
-                    <button class="eu-subpanel-back" type="button" data-back>
-                      ← Back
-                    </button>
+                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
                     <div class="eu-subpanel-title">
                       <div class="eu-subpanel-subject" id="gcseSubjectTitle">Subject</div>
                       <div class="eu-subpanel-small">Choose an exam board</div>
                     </div>
                   </div>
 
-                  <div class="eu-board-grid" id="gcseBoardsGrid">
-                    <!-- JS injects board cards here -->
-                  </div>
+                  <div class="eu-board-list" id="gcseBoardsList"></div>
                 </div>
               </div>
             </div>
@@ -204,7 +200,7 @@
                     </div>
                   </div>
 
-                  <div class="eu-board-grid" id="igcseBoardsGrid"></div>
+                  <div class="eu-board-list" id="igcseBoardsList"></div>
                 </div>
               </div>
             </div>
@@ -285,7 +281,7 @@
                     </div>
                   </div>
 
-                  <div class="eu-board-grid" id="olevelBoardsGrid"></div>
+                  <div class="eu-board-list" id="olevelBoardsList"></div>
                 </div>
               </div>
             </div>
@@ -586,6 +582,20 @@
       if(dd) dropdowns.set(btn, dd);
     });
 
+    function closeSubjectPanel(dd){
+      const otherView = dd.querySelector(".eu-rightview--other");
+      const boardsView = dd.querySelector(".eu-rightview--boards");
+      if(otherView && boardsView){
+        otherView.hidden = false;
+        boardsView.hidden = true;
+      }
+      dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
+    }
+
+    function closeAllSubjectPanels(){
+      document.querySelectorAll(".eu-dropdown").forEach(dd => closeSubjectPanel(dd));
+    }
+
     function closeAllDropdowns(){
       dropdowns.forEach((dd, btn) => {
         dd.classList.remove("show");
@@ -622,44 +632,19 @@
     // prevent clicks inside dropdown from closing
     dropdowns.forEach((dd) => dd.addEventListener("click", (e) => e.stopPropagation()));
 
-    // ===== Subject -> Exam Boards panel (SaveMyExams style) =====
+    // ===== Subject -> Exam Boards panel (NAMES ONLY) =====
     const EXAM_BOARDS = {
-      gcse: ["AQA", "Edexcel", "OCR", "WJEC", "CCEA"],
-      igcse: ["Cambridge (CIE)", "Edexcel", "OxfordAQA"],
-      olevel: ["Cambridge"]
+      gcse: ["AQA", "EDEXCEL", "OCR", "WJEC", "EDUQAS"],
+      igcse: ["CIE", "EDEXCEL", "OXFORD AQA"],
+      olevel: ["CIE"]
     };
 
-    const RESOURCES = [
-      "Exam Questions",
-      "Revision Notes",
-      "Flashcards",
-      "Target Test",
-      "Mock Exams",
-      "Past Papers"
-    ];
-
-    function buildBoardCard(boardName){
-      const card = document.createElement("div");
-      card.className = "eu-board-card";
-
-      const h = document.createElement("div");
-      h.className = "eu-board-name";
-      h.textContent = boardName;
-
-      const list = document.createElement("div");
-      list.className = "eu-board-links";
-
-      RESOURCES.forEach(item => {
-        const a = document.createElement("a");
-        a.className = "eu-board-link";
-        a.href = "#";
-        a.textContent = item;
-        list.appendChild(a);
-      });
-
-      card.appendChild(h);
-      card.appendChild(list);
-      return card;
+    function buildBoardPill(boardName){
+      const a = document.createElement("a");
+      a.className = "eu-board-pill";
+      a.href = "#";
+      a.textContent = boardName;
+      return a;
     }
 
     function showSubjectPanel(examKey, subjectText){
@@ -674,30 +659,16 @@
       otherView.hidden = true;
       boardsView.hidden = false;
 
-      // set title
+      // set subject title
       const titleEl = dd.querySelector("#" + examKey + "SubjectTitle");
       if(titleEl) titleEl.textContent = subjectText;
 
-      // fill boards
-      const grid = dd.querySelector("#" + examKey + "BoardsGrid");
-      if(grid){
-        grid.innerHTML = "";
-        (EXAM_BOARDS[examKey] || []).forEach(b => grid.appendChild(buildBoardCard(b)));
+      // fill board list (names only)
+      const list = dd.querySelector("#" + examKey + "BoardsList");
+      if(list){
+        list.innerHTML = "";
+        (EXAM_BOARDS[examKey] || []).forEach(b => list.appendChild(buildBoardPill(b)));
       }
-    }
-
-    function closeSubjectPanel(dd){
-      const otherView = dd.querySelector(".eu-rightview--other");
-      const boardsView = dd.querySelector(".eu-rightview--boards");
-      if(otherView && boardsView){
-        otherView.hidden = false;
-        boardsView.hidden = true;
-      }
-      dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
-    }
-
-    function closeAllSubjectPanels(){
-      document.querySelectorAll(".eu-dropdown").forEach(dd => closeSubjectPanel(dd));
     }
 
     // click subjects
@@ -708,12 +679,12 @@
         const examKey = link.getAttribute("data-exam");
         const subjectText = link.textContent.trim();
 
-        // active highlight within same dropdown
         const dd = document.getElementById("dd-" + examKey);
         if(dd){
           dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
           link.classList.add("is-active");
         }
+
         showSubjectPanel(examKey, subjectText);
       });
     });
