@@ -25,40 +25,37 @@
         <!-- GCSE -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="gcse">GCSE</button>
-
-          <div class="eu-dropdown" id="dd-gcse" aria-label="GCSE dropdown">
+          <div class="eu-dropdown" id="dd-gcse" aria-label="GCSE dropdown" data-exam="gcse">
             <div class="eu-dd-header">
               <div class="eu-dd-title">GCSE</div>
             </div>
 
-            <div class="eu-dd-grid">
-              <!-- LEFT: Subjects -->
-              <div class="eu-dd-col eu-dd-col--subjects">
-                <div class="eu-dd-subtitle">Subjects</div>
-                <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Biology</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Chemistry</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Combined Science</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Computer Science</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">English Language</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">English Literature</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">French</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Geography</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">German</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">History</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Latin</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Mathematics</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Physical Education</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Physics</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Religious Studies</a>
-                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Statistics</a>
+            <!-- DEFAULT VIEW -->
+            <div class="eu-dd-view eu-dd-view--main">
+              <div class="eu-dd-grid">
+                <div class="eu-dd-col">
+                  <div class="eu-dd-subtitle">Subjects</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Biology">Biology</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Chemistry">Chemistry</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Combined Science">Combined Science</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Computer Science">Computer Science</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="English Language">English Language</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="English Literature">English Literature</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="French">French</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Geography">Geography</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="German">German</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="History">History</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Latin">Latin</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Mathematics">Mathematics</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Physical Education">Physical Education</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Physics">Physics</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Religious Studies">Religious Studies</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Statistics">Statistics</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- RIGHT: Panel -->
-              <div class="eu-dd-col eu-dd-col--panel">
-                <!-- Default RIGHT view: Other Subjects -->
-                <div class="eu-rightview eu-rightview--other">
+                <div class="eu-dd-col">
                   <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
                   <div class="eu-dd-scroll">
                     <a class="eu-dd-link" href="#">Ancient History</a>
@@ -101,20 +98,21 @@
                     <a class="eu-dd-link" href="#">Welsh Language</a>
                   </div>
                 </div>
-
-                <!-- Subject RIGHT view: Exam boards (NAMES ONLY) -->
-                <div class="eu-rightview eu-rightview--boards" hidden>
-                  <div class="eu-subpanel-head">
-                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
-                    <div class="eu-subpanel-title">
-                      <div class="eu-subpanel-subject" id="gcseSubjectTitle">Subject</div>
-                      <div class="eu-subpanel-small">Choose an exam board</div>
-                    </div>
-                  </div>
-
-                  <div class="eu-board-list" id="gcseBoardsList"></div>
-                </div>
               </div>
+            </div>
+
+            <!-- EXAM BOARD VIEW -->
+            <div class="eu-dd-view eu-dd-view--boards" aria-hidden="true">
+              <button class="eu-back" type="button" data-back>
+                <span aria-hidden="true">←</span> Back
+              </button>
+
+              <div class="eu-board-header">
+                <div class="eu-board-subject" data-subject-title>Subject</div>
+                <div class="eu-board-kicker">Choose an exam board</div>
+              </div>
+
+              <div class="eu-board-grid" data-board-grid></div>
             </div>
           </div>
         </div>
@@ -122,39 +120,36 @@
         <!-- IGCSE -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="igcse">IGCSE</button>
-
-          <div class="eu-dropdown" id="dd-igcse" aria-label="IGCSE dropdown">
+          <div class="eu-dropdown" id="dd-igcse" aria-label="IGCSE dropdown" data-exam="igcse">
             <div class="eu-dd-header">
               <div class="eu-dd-title">IGCSE</div>
             </div>
 
-            <div class="eu-dd-grid">
-              <!-- LEFT: Subjects -->
-              <div class="eu-dd-col eu-dd-col--subjects">
-                <div class="eu-dd-subtitle">Subjects</div>
-                <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Biology</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Chemistry</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Combined/Double Science</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Computer Science</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Co-ordinated Sciences</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">English - First Language</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">English - Literature in English</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">French</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Further Pure Mathematics</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Geography</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">German</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">History</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Mathematics</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Physical Education</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Physics</a>
-                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Religious Studies</a>
+            <div class="eu-dd-view eu-dd-view--main">
+              <div class="eu-dd-grid">
+                <div class="eu-dd-col">
+                  <div class="eu-dd-subtitle">Subjects</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Biology">Biology</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Chemistry">Chemistry</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Combined/Double Science">Combined/Double Science</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Computer Science">Computer Science</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Co-ordinated Sciences">Co-ordinated Sciences</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="English - First Language">English - First Language</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="English - Literature in English">English - Literature in English</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="French">French</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Further Pure Mathematics">Further Pure Mathematics</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Geography">Geography</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="German">German</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="History">History</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Mathematics">Mathematics</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Physical Education">Physical Education</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Physics">Physics</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Religious Studies">Religious Studies</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- RIGHT: Panel -->
-              <div class="eu-dd-col eu-dd-col--panel">
-                <div class="eu-rightview eu-rightview--other">
+                <div class="eu-dd-col">
                   <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
                   <div class="eu-dd-scroll">
                     <a class="eu-dd-link" href="#">Accounting</a>
@@ -190,19 +185,20 @@
                     <a class="eu-dd-link" href="#">Travel & Tourism</a>
                   </div>
                 </div>
-
-                <div class="eu-rightview eu-rightview--boards" hidden>
-                  <div class="eu-subpanel-head">
-                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
-                    <div class="eu-subpanel-title">
-                      <div class="eu-subpanel-subject" id="igcseSubjectTitle">Subject</div>
-                      <div class="eu-subpanel-small">Choose an exam board</div>
-                    </div>
-                  </div>
-
-                  <div class="eu-board-list" id="igcseBoardsList"></div>
-                </div>
               </div>
+            </div>
+
+            <div class="eu-dd-view eu-dd-view--boards" aria-hidden="true">
+              <button class="eu-back" type="button" data-back>
+                <span aria-hidden="true">←</span> Back
+              </button>
+
+              <div class="eu-board-header">
+                <div class="eu-board-subject" data-subject-title>Subject</div>
+                <div class="eu-board-kicker">Choose an exam board</div>
+              </div>
+
+              <div class="eu-board-grid" data-board-grid></div>
             </div>
           </div>
         </div>
@@ -210,41 +206,38 @@
         <!-- O LEVEL -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="olevel">O LEVEL</button>
-
-          <div class="eu-dropdown" id="dd-olevel" aria-label="O Level dropdown">
+          <div class="eu-dropdown" id="dd-olevel" aria-label="O Level dropdown" data-exam="olevel">
             <div class="eu-dd-header">
-              <div class="eu-dd-title">Cambridge O Levels</div>
+              <div class="eu-dd-title">O LEVEL</div>
             </div>
 
-            <div class="eu-dd-grid">
-              <!-- LEFT: Subjects -->
-              <div class="eu-dd-col eu-dd-col--subjects">
-                <div class="eu-dd-subtitle">Subjects</div>
-                <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Accounting - 7707</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Additional Mathematics - 4037</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Biology - 5090</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Business - 7081</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Business Studies - 7115</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Chemistry - 5070</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Combined Science - 5129</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Computer Science - 2210</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Economics - 2281</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">English Language - 1123</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">French - 3015</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Geography - 2217</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">History - 2147</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Literature in English - 2010</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Mathematics (Syllabus D) - 4024</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Physics - 5054</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Religious Studies - 2048</a>
-                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Statistics - 4040</a>
+            <div class="eu-dd-view eu-dd-view--main">
+              <div class="eu-dd-grid">
+                <div class="eu-dd-col">
+                  <div class="eu-dd-subtitle">Subjects</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Accounting - 7707">Accounting - 7707</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Additional Mathematics - 4037">Additional Mathematics - 4037</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Biology - 5090">Biology - 5090</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Business - 7081">Business - 7081</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Business Studies - 7115">Business Studies - 7115</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Chemistry - 5070">Chemistry - 5070</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Combined Science - 5129">Combined Science - 5129</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Computer Science - 2210">Computer Science - 2210</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Economics - 2281">Economics - 2281</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="English Language - 1123">English Language - 1123</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="French - 3015">French - 3015</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Geography - 2217">Geography - 2217</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="History - 2147">History - 2147</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Literature in English - 2010">Literature in English - 2010</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Mathematics (Syllabus D) - 4024">Mathematics (Syllabus D) - 4024</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Physics - 5054">Physics - 5054</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Religious Studies - 2048">Religious Studies - 2048</a>
+                    <a class="eu-dd-link eu-subject" href="#" data-subject="Statistics - 4040">Statistics - 4040</a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- RIGHT: Panel -->
-              <div class="eu-dd-col eu-dd-col--panel">
-                <div class="eu-rightview eu-rightview--other">
+                <div class="eu-dd-col">
                   <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
                   <div class="eu-dd-scroll">
                     <a class="eu-dd-link" href="#">Agriculture - 5038</a>
@@ -271,19 +264,20 @@
                     <a class="eu-dd-link" href="#">Urdu - Second Language - 3248</a>
                   </div>
                 </div>
-
-                <div class="eu-rightview eu-rightview--boards" hidden>
-                  <div class="eu-subpanel-head">
-                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
-                    <div class="eu-subpanel-title">
-                      <div class="eu-subpanel-subject" id="olevelSubjectTitle">Subject</div>
-                      <div class="eu-subpanel-small">Choose an exam board</div>
-                    </div>
-                  </div>
-
-                  <div class="eu-board-list" id="olevelBoardsList"></div>
-                </div>
               </div>
+            </div>
+
+            <div class="eu-dd-view eu-dd-view--boards" aria-hidden="true">
+              <button class="eu-back" type="button" data-back>
+                <span aria-hidden="true">←</span> Back
+              </button>
+
+              <div class="eu-board-header">
+                <div class="eu-board-subject" data-subject-title>Subject</div>
+                <div class="eu-board-kicker">Choose an exam board</div>
+              </div>
+
+              <div class="eu-board-grid" data-board-grid></div>
             </div>
           </div>
         </div>
@@ -328,6 +322,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </nav>
@@ -573,35 +568,32 @@
       drawer.setAttribute("aria-hidden", String(!open));
     });
 
-    // dropdowns (centered)
+    // dropdowns (open/close)
     const ddButtons = document.querySelectorAll("[data-dd]");
     const dropdowns = new Map();
+
     ddButtons.forEach(btn => {
       const key = btn.getAttribute("data-dd");
       const dd = document.getElementById("dd-" + key);
       if(dd) dropdowns.set(btn, dd);
     });
 
-    function closeSubjectPanel(dd){
-      const otherView = dd.querySelector(".eu-rightview--other");
-      const boardsView = dd.querySelector(".eu-rightview--boards");
-      if(otherView && boardsView){
-        otherView.hidden = false;
-        boardsView.hidden = true;
+    function resetDropdownPanels(dd){
+      const main = dd.querySelector(".eu-dd-view--main");
+      const boards = dd.querySelector(".eu-dd-view--boards");
+      if(main && boards){
+        main.style.display = "";
+        boards.style.display = "none";
+        boards.setAttribute("aria-hidden", "true");
       }
-      dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
-    }
-
-    function closeAllSubjectPanels(){
-      document.querySelectorAll(".eu-dropdown").forEach(dd => closeSubjectPanel(dd));
     }
 
     function closeAllDropdowns(){
       dropdowns.forEach((dd, btn) => {
         dd.classList.remove("show");
         btn.classList.remove("is-open");
+        resetDropdownPanels(dd);
       });
-      closeAllSubjectPanels();
     }
 
     ddButtons.forEach(btn => {
@@ -613,8 +605,14 @@
         if(!isOpen){
           dd.classList.add("show");
           btn.classList.add("is-open");
+          resetDropdownPanels(dd);
         }
       });
+    });
+
+    // prevent clicks inside dropdown from closing
+    dropdowns.forEach((dd) => {
+      dd.addEventListener("click", (e) => e.stopPropagation());
     });
 
     // close dropdowns on outside click / escape
@@ -629,63 +627,43 @@
       }
     });
 
-    // prevent clicks inside dropdown from closing
-    dropdowns.forEach((dd) => dd.addEventListener("click", (e) => e.stopPropagation()));
-
-    // ===== Subject -> Exam Boards panel (NAMES ONLY) =====
-    const EXAM_BOARDS = {
-      gcse: ["AQA", "EDEXCEL", "OCR", "WJEC", "EDUQAS"],
-      igcse: ["CIE", "EDEXCEL", "OXFORD AQA"],
-      olevel: ["CIE"]
+    // exam board sets (ALL CAPS)
+    const BOARD_SETS = {
+      gcse: ["AQA","EDEXCEL","OCR","WJEC","EDUQAS"],
+      igcse: ["CIE","EDEXCEL","OXFORD AQA"],
+      olevel: ["CIE"],
     };
 
-    function buildBoardPill(boardName){
-      const a = document.createElement("a");
-      a.className = "eu-board-pill";
-      a.href = "#";
-      a.textContent = boardName;
-      return a;
-    }
+    function openBoardPanel(dd, subjectName){
+      const examKey = dd.getAttribute("data-exam");
+      const main = dd.querySelector(".eu-dd-view--main");
+      const boards = dd.querySelector(".eu-dd-view--boards");
+      const title = dd.querySelector("[data-subject-title]");
+      const grid = dd.querySelector("[data-board-grid]");
 
-    function showSubjectPanel(examKey, subjectText){
-      const dd = document.getElementById("dd-" + examKey);
-      if(!dd) return;
+      const list = BOARD_SETS[examKey] || [];
 
-      const otherView = dd.querySelector(".eu-rightview--other");
-      const boardsView = dd.querySelector(".eu-rightview--boards");
-      if(!otherView || !boardsView) return;
+      if(title) title.textContent = subjectName;
+      if(grid){
+        grid.innerHTML = list.map(b => `<a class="eu-board-link" href="#">${b}</a>`).join("");
+      }
 
-      // swap views
-      otherView.hidden = true;
-      boardsView.hidden = false;
-
-      // set subject title
-      const titleEl = dd.querySelector("#" + examKey + "SubjectTitle");
-      if(titleEl) titleEl.textContent = subjectText;
-
-      // fill board list (names only)
-      const list = dd.querySelector("#" + examKey + "BoardsList");
-      if(list){
-        list.innerHTML = "";
-        (EXAM_BOARDS[examKey] || []).forEach(b => list.appendChild(buildBoardPill(b)));
+      if(main && boards){
+        main.style.display = "none";
+        boards.style.display = "block";
+        boards.setAttribute("aria-hidden", "false");
       }
     }
 
-    // click subjects
+    // subject click -> show exam boards panel
     document.querySelectorAll(".eu-subject").forEach(link => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const examKey = link.getAttribute("data-exam");
-        const subjectText = link.textContent.trim();
-
-        const dd = document.getElementById("dd-" + examKey);
-        if(dd){
-          dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
-          link.classList.add("is-active");
-        }
-
-        showSubjectPanel(examKey, subjectText);
+        const dd = link.closest(".eu-dropdown");
+        if(!dd) return;
+        const subjectName = link.getAttribute("data-subject") || link.textContent.trim();
+        openBoardPanel(dd, subjectName);
       });
     });
 
@@ -695,7 +673,8 @@
         e.preventDefault();
         e.stopPropagation();
         const dd = btn.closest(".eu-dropdown");
-        if(dd) closeSubjectPanel(dd);
+        if(!dd) return;
+        resetDropdownPanels(dd);
       });
     });
   </script>
