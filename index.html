@@ -9,85 +9,98 @@
 
 <body>
   <!-- HEADER -->
-  <header class="eu-header">
+  <header class="eu-header" id="top">
     <div class="eu-inner">
-      <!-- Left: brand -->
-      <a class="eu-brand" href="/">
+      <!-- Left: Brand -->
+      <a class="eu-brand" href="/" aria-label="ElevateU home">
         <img class="eu-logo" src="assets/elevateu-logo.png" alt="ElevateU logo">
         <span class="eu-brand-name">ElevateU</span>
       </a>
 
-      <!-- Center: nav -->
-      <nav class="eu-nav" aria-label="Primary">
+      <!-- Center: Navigation -->
+      <nav class="eu-nav" aria-label="Primary navigation">
         <a class="eu-nav-link" href="/hub">HUB</a>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="GCSE">GCSE <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="GCSE" type="button">GCSE</button>
           <div class="eu-dropdown" data-dropdown="GCSE">
             <div class="eu-dd-header">
               <div class="eu-dd-title">GCSE OVERALL</div>
-              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+              <button class="eu-toggle" type="button" data-toggle="boards-gcse">
+                Show exam boards <span class="eu-toggle-icon">+</span>
+              </button>
             </div>
+
+            <div class="eu-boards" id="boards-gcse" hidden>
+              <a class="eu-chip" href="/gcse/boards/aqa">AQA</a>
+              <a class="eu-chip" href="/gcse/boards/edexcel">Edexcel</a>
+              <a class="eu-chip" href="/gcse/boards/ocr">OCR</a>
+              <a class="eu-chip" href="/gcse/boards/wjec">WJEC</a>
+              <a class="eu-chip" href="/gcse/boards/ccea">CCEA</a>
+            </div>
+
             <div class="eu-dd-grid">
               <div class="eu-dd-col">
-                <a class="eu-dd-link" href="#">Biology</a>
-                <a class="eu-dd-link" href="#">Chemistry</a>
-                <a class="eu-dd-link" href="#">Combined Science</a>
-                <a class="eu-dd-link" href="#">Computer Science</a>
-                <a class="eu-dd-link" href="#">English Language</a>
-                <a class="eu-dd-link" href="#">English Literature</a>
-                <a class="eu-dd-link" href="#">French</a>
-                <a class="eu-dd-link" href="#">Geography</a>
-                <a class="eu-dd-link" href="#">German</a>
-                <a class="eu-dd-link" href="#">History</a>
-                <a class="eu-dd-link" href="#">Latin</a>
-                <a class="eu-dd-link" href="#">Mathematics</a>
-                <a class="eu-dd-link" href="#">Physical Education</a>
-                <a class="eu-dd-link" href="#">Physics</a>
-                <a class="eu-dd-link" href="#">Religious Studies</a>
-                <a class="eu-dd-link" href="#">Statistics</a>
+                <a class="eu-dd-link" href="/gcse/biology">Biology</a>
+                <a class="eu-dd-link" href="/gcse/chemistry">Chemistry</a>
+                <a class="eu-dd-link" href="/gcse/combined-science">Combined Science</a>
+                <a class="eu-dd-link" href="/gcse/computer-science">Computer Science</a>
+                <a class="eu-dd-link" href="/gcse/english-language">English Language</a>
+                <a class="eu-dd-link" href="/gcse/english-literature">English Literature</a>
+                <a class="eu-dd-link" href="/gcse/french">French</a>
+                <a class="eu-dd-link" href="/gcse/geography">Geography</a>
+                <a class="eu-dd-link" href="/gcse/german">German</a>
+                <a class="eu-dd-link" href="/gcse/history">History</a>
+                <a class="eu-dd-link" href="/gcse/latin">Latin</a>
+                <a class="eu-dd-link" href="/gcse/mathematics">Mathematics</a>
+                <a class="eu-dd-link" href="/gcse/physical-education">Physical Education</a>
+                <a class="eu-dd-link" href="/gcse/physics">Physics</a>
+                <a class="eu-dd-link" href="/gcse/religious-studies">Religious Studies</a>
+                <a class="eu-dd-link" href="/gcse/statistics">Statistics</a>
+                <a class="eu-dd-link" href="/gcse/other-subjects">Other Subjects (Past Papers only)</a>
               </div>
+
               <div class="eu-dd-col">
                 <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
                 <div class="eu-dd-scroll">
-                  <a class="eu-dd-link muted" href="#">Ancient History</a>
-                  <a class="eu-dd-link muted" href="#">Arabic</a>
-                  <a class="eu-dd-link muted" href="#">Art and Design</a>
-                  <a class="eu-dd-link muted" href="#">Astronomy</a>
-                  <a class="eu-dd-link muted" href="#">Biblical Hebrew</a>
-                  <a class="eu-dd-link muted" href="#">Built Environment</a>
-                  <a class="eu-dd-link muted" href="#">Business</a>
-                  <a class="eu-dd-link muted" href="#">Chinese</a>
-                  <a class="eu-dd-link muted" href="#">Citizenship Studies</a>
-                  <a class="eu-dd-link muted" href="#">Classical Civilisation</a>
-                  <a class="eu-dd-link muted" href="#">Classical Greek</a>
-                  <a class="eu-dd-link muted" href="#">Dance</a>
-                  <a class="eu-dd-link muted" href="#">Design and Technology</a>
-                  <a class="eu-dd-link muted" href="#">Digital Technology</a>
-                  <a class="eu-dd-link muted" href="#">Drama</a>
-                  <a class="eu-dd-link muted" href="#">Electronics</a>
-                  <a class="eu-dd-link muted" href="#">Film Studies</a>
-                  <a class="eu-dd-link muted" href="#">Food Preparation and Nutrition</a>
-                  <a class="eu-dd-link muted" href="#">Geology</a>
-                  <a class="eu-dd-link muted" href="#">Greek</a>
-                  <a class="eu-dd-link muted" href="#">Gujarati</a>
-                  <a class="eu-dd-link muted" href="#">Health and Social Care and Children's Care, Play, Learning and Development</a>
-                  <a class="eu-dd-link muted" href="#">Hebrew (Modern)</a>
-                  <a class="eu-dd-link muted" href="#">Information and Communication Technology</a>
-                  <a class="eu-dd-link muted" href="#">Italian</a>
-                  <a class="eu-dd-link muted" href="#">Japanese</a>
-                  <a class="eu-dd-link muted" href="#">Media Studies</a>
-                  <a class="eu-dd-link muted" href="#">Music</a>
-                  <a class="eu-dd-link muted" href="#">Panjabi</a>
-                  <a class="eu-dd-link muted" href="#">Persian</a>
-                  <a class="eu-dd-link muted" href="#">Polish</a>
-                  <a class="eu-dd-link muted" href="#">Psychology</a>
-                  <a class="eu-dd-link muted" href="#">Russian</a>
-                  <a class="eu-dd-link muted" href="#">Sociology</a>
-                  <a class="eu-dd-link muted" href="#">Spanish</a>
-                  <a class="eu-dd-link muted" href="#">Turkish</a>
-                  <a class="eu-dd-link muted" href="#">Urdu</a>
-                  <a class="eu-dd-link muted" href="#">Welsh Language</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/ancient-history">Ancient History</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/arabic">Arabic</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/art-and-design">Art and Design</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/astronomy">Astronomy</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/biblical-hebrew">Biblical Hebrew</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/built-environment">Built Environment</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/business">Business</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/chinese">Chinese</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/citizenship-studies">Citizenship Studies</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/classical-civilisation">Classical Civilisation</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/classical-greek">Classical Greek</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/dance">Dance</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/design-and-technology">Design and Technology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/digital-technology">Digital Technology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/drama">Drama</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/electronics">Electronics</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/film-studies">Film Studies</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/food-preparation-and-nutrition">Food Preparation and Nutrition</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/geology">Geology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/greek">Greek</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/gujarati">Gujarati</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/health-and-social-care">Health and Social Care and Children's Care, Play, Learning and Development</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/hebrew-modern">Hebrew (Modern)</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/ict">Information and Communication Technology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/italian">Italian</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/japanese">Japanese</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/media-studies">Media Studies</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/music">Music</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/panjabi">Panjabi</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/persian">Persian</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/polish">Polish</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/psychology">Psychology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/russian">Russian</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/sociology">Sociology</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/spanish">Spanish</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/turkish">Turkish</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/urdu">Urdu</a>
+                  <a class="eu-dd-link muted" href="/gcse/past-papers/welsh-language">Welsh Language</a>
                 </div>
               </div>
             </div>
@@ -95,96 +108,254 @@
         </div>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="IGCSE">IGCSE <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="IGCSE" type="button">IGCSE</button>
           <div class="eu-dropdown" data-dropdown="IGCSE">
             <div class="eu-dd-header">
               <div class="eu-dd-title">IGCSE OVERALL</div>
-              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+              <button class="eu-toggle" type="button" data-toggle="boards-igcse">
+                Show exam boards <span class="eu-toggle-icon">+</span>
+              </button>
             </div>
-            <div class="eu-dd-note">Add the full IGCSE list here next (same format as GCSE).</div>
+
+            <div class="eu-boards" id="boards-igcse" hidden>
+              <a class="eu-chip" href="/igcse/boards/cambridge">Cambridge (CAIE)</a>
+              <a class="eu-chip" href="/igcse/boards/edexcel">Edexcel</a>
+              <a class="eu-chip" href="/igcse/boards/oxfordaqa">OxfordAQA</a>
+              <a class="eu-chip" href="/igcse/boards/pearson">Pearson</a>
+            </div>
+
+            <div class="eu-dd-note">
+              (Next step: I’ll paste your full IGCSE subject list in the same layout as GCSE.)
+            </div>
           </div>
         </div>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="OLEVEL">O LEVEL <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="OLEVEL" type="button">O LEVEL</button>
           <div class="eu-dropdown" data-dropdown="OLEVEL">
             <div class="eu-dd-header">
               <div class="eu-dd-title">Cambridge O Levels OVERALL</div>
-              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+              <button class="eu-toggle" type="button" data-toggle="boards-olevel">
+                Show exam boards <span class="eu-toggle-icon">+</span>
+              </button>
             </div>
-            <div class="eu-dd-note">Add the full O Level list here next.</div>
+
+            <div class="eu-boards" id="boards-olevel" hidden>
+              <a class="eu-chip" href="/o-level/boards/cambridge">Cambridge (CAIE)</a>
+            </div>
+
+            <div class="eu-dd-note">
+              (Next step: I’ll paste your full O Level subject list in the same layout.)
+            </div>
           </div>
         </div>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="AS">AS <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="AS" type="button">AS</button>
           <div class="eu-dropdown" data-dropdown="AS">
             <div class="eu-dd-header">
               <div class="eu-dd-title">AS</div>
+              <button class="eu-toggle" type="button" data-toggle="boards-as">
+                Show exam boards <span class="eu-toggle-icon">+</span>
+              </button>
             </div>
-            <div class="eu-dd-note">Add AS subjects later.</div>
+
+            <div class="eu-boards" id="boards-as" hidden>
+              <a class="eu-chip" href="/as/boards/cambridge">Cambridge (CAIE)</a>
+              <a class="eu-chip" href="/as/boards/edexcel">Edexcel</a>
+              <a class="eu-chip" href="/as/boards/aqa">AQA</a>
+              <a class="eu-chip" href="/as/boards/ocr">OCR</a>
+            </div>
+
+            <div class="eu-dd-note">Add AS content later.</div>
           </div>
         </div>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="ALEVEL">A LEVEL <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="ALEVEL" type="button">A LEVEL</button>
           <div class="eu-dropdown" data-dropdown="ALEVEL">
             <div class="eu-dd-header">
               <div class="eu-dd-title">A LEVEL</div>
+              <button class="eu-toggle" type="button" data-toggle="boards-alevel">
+                Show exam boards <span class="eu-toggle-icon">+</span>
+              </button>
             </div>
-            <div class="eu-dd-note">Add A Level subjects later.</div>
+
+            <div class="eu-boards" id="boards-alevel" hidden>
+              <a class="eu-chip" href="/a-level/boards/cambridge">Cambridge (CAIE)</a>
+              <a class="eu-chip" href="/a-level/boards/edexcel">Edexcel</a>
+              <a class="eu-chip" href="/a-level/boards/aqa">AQA</a>
+              <a class="eu-chip" href="/a-level/boards/ocr">OCR</a>
+              <a class="eu-chip" href="/a-level/boards/wjec">WJEC</a>
+            </div>
+
+            <div class="eu-dd-note">Add A Level content later.</div>
           </div>
         </div>
 
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" data-navbtn="OTHER">OTHER <span class="eu-caret">▾</span></button>
+          <button class="eu-nav-btn" data-navbtn="OTHER" type="button">OTHER</button>
           <div class="eu-dropdown" data-dropdown="OTHER">
             <div class="eu-dd-header">
               <div class="eu-dd-title">OTHER</div>
             </div>
+
             <div class="eu-dd-grid">
               <div class="eu-dd-col">
-                <a class="eu-dd-link" href="#">Level 2</a>
-                <a class="eu-dd-link" href="#">Level 3</a>
+                <a class="eu-dd-link" href="/other/level-2">Level 2</a>
+                <a class="eu-dd-link" href="/other/level-3">Level 3</a>
+
                 <div class="eu-dd-divider"></div>
-                <a class="eu-dd-link" href="#">🔒 University Advice</a>
-                <a class="eu-dd-link" href="#">🔒 Admissions Test</a>
-                <a class="eu-dd-link" href="#">🔒 Personal Statement</a>
-                <a class="eu-dd-link" href="#">🔒 Interviews</a>
+
+                <a class="eu-dd-link locked" href="/other/university-advice"><span class="lock">🔒</span> University Advice</a>
+                <a class="eu-dd-link locked" href="/other/admissions-test"><span class="lock">🔒</span> Admissions Test</a>
+                <a class="eu-dd-link locked" href="/other/personal-statement"><span class="lock">🔒</span> Personal Statement</a>
+                <a class="eu-dd-link locked" href="/other/interviews"><span class="lock">🔒</span> Interviews</a>
               </div>
+
               <div class="eu-dd-col">
                 <div class="eu-dd-subtitle">Level 2</div>
-                <a class="eu-dd-link muted" href="#">AQA Further Maths</a>
-                <a class="eu-dd-link muted" href="#">WJEC Additional Maths</a>
+                <a class="eu-dd-link muted" href="/other/level-2/aqa-further-maths">AQA Further Maths</a>
+                <a class="eu-dd-link muted" href="/other/level-2/wjec-additional-maths">WJEC Additional Maths</a>
+
                 <div class="eu-dd-subtitle" style="margin-top:12px;">Level 3</div>
-                <a class="eu-dd-link muted" href="#">OCR FSMQ Additional Maths</a>
+                <a class="eu-dd-link muted" href="/other/level-3/ocr-fsmq-additional-maths">OCR FSMQ Additional Maths</a>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      <!-- Right: search + auth + burger -->
+      <!-- Right: Search + Auth + Hamburger -->
       <div class="eu-right">
         <div class="eu-search" role="search">
-          <input class="eu-search-input" type="search" placeholder="Search subjects, papers, notes..." />
+          <span class="eu-search-icon" aria-hidden="true">⌕</span>
+          <input class="eu-search-input" type="search" placeholder="Search..." aria-label="Search">
         </div>
 
         <div class="eu-auth">
-          <a class="eu-btn ghost" href="/sign-up">Sign up</a>
-          <a class="eu-btn solid" href="/sign-in">Sign in</a>
+          <a class="eu-auth-link" href="/sign-up">Sign up</a>
+          <a class="eu-auth-link" href="/sign-in">Sign in</a>
         </div>
 
-        <button class="eu-burger" id="euBurger" type="button" aria-label="Open menu">
+        <button class="eu-burger" id="euBurger" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Drawer -->
-    <div class="eu-drawer" id="euDrawer">
+    <!-- Hamburger drawer -->
+    <div class="eu-drawer" id="euDrawer" role="dialog" aria-label="Menu" aria-hidden="true">
       <div class="eu-drawer-inner">
         <div class="eu-drawer-section">
           <a class="eu-drawer-link" href="/hub">Hub</a>
           <a class="eu-drawer-link" href="/articles">Articles</a>
-          <a class="eu-dra
+          <a class="eu-drawer-link" href="/about">About Us</a>
+          <a class="eu-drawer-link" href="/contact">Contact Us</a>
+          <a class="eu-drawer-link" href="/faqs">FAQ’s</a>
+          <a class="eu-drawer-link" href="/support-volunteering">Support & Volunteering</a>
+          <a class="eu-drawer-link" href="/suggestions">Suggestions</a>
+          <a class="eu-drawer-link" href="/news">News and Updates Page</a>
+          <a class="eu-drawer-link" href="/privacy-terms">Privacy Policy and Terms of Service Page</a>
+        </div>
+
+        <div class="eu-drawer-section">
+          <div class="eu-drawer-title">Account</div>
+          <a class="eu-drawer-link" href="/sign-up">Sign up</a>
+          <a class="eu-drawer-link" href="/sign-in">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="eu-page">
+    <h1 class="eu-h1">Launchpad</h1>
+    <p class="eu-p">Your homepage content goes here.</p>
+  </main>
+
+  <script>
+    // Dropdowns + drawer + board toggles (all vanilla JS)
+    const $ = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+
+    function closeAllDropdowns(){
+      $$("[data-dropdown]").forEach(d => d.classList.remove("show"));
+      $$("[data-navbtn]").forEach(b => b.classList.remove("is-open"));
+    }
+
+    function toggleDropdown(id){
+      const dd = $(`[data-dropdown="${id}"]`);
+      const btn = $(`[data-navbtn="${id}"]`);
+      if(!dd || !btn) return;
+
+      const isOpen = dd.classList.contains("show");
+      closeAllDropdowns();
+      if(!isOpen){
+        dd.classList.add("show");
+        btn.classList.add("is-open");
+      }
+    }
+
+    function setDrawer(open){
+      const drawer = $("#euDrawer");
+      const burger = $("#euBurger");
+      if(!drawer || !burger) return;
+
+      drawer.classList.toggle("show", open);
+      burger.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      drawer.setAttribute("aria-hidden", String(!open));
+    }
+
+    document.addEventListener("click", (e) => {
+      // Nav dropdown buttons
+      const navBtn = e.target.closest("[data-navbtn]");
+      if(navBtn){
+        e.preventDefault();
+        toggleDropdown(navBtn.getAttribute("data-navbtn"));
+        return;
+      }
+
+      // Exam board toggles
+      const t = e.target.closest("[data-toggle]");
+      if(t){
+        const id = t.getAttribute("data-toggle");
+        const panel = document.getElementById(id);
+        if(panel){
+          const isHidden = panel.hasAttribute("hidden");
+          if(isHidden) panel.removeAttribute("hidden");
+          else panel.setAttribute("hidden","");
+          // update +/−
+          const icon = t.querySelector(".eu-toggle-icon");
+          if(icon) icon.textContent = isHidden ? "−" : "+";
+          t.childNodes[0].textContent = (isHidden ? "Hide" : "Show") + " exam boards ";
+        }
+        return;
+      }
+
+      // Burger
+      if(e.target.closest("#euBurger")){
+        e.preventDefault();
+        const open = !$("#euDrawer").classList.contains("show");
+        setDrawer(open);
+        closeAllDropdowns();
+        return;
+      }
+
+      // Click outside header closes things
+      if(!e.target.closest(".eu-header")){
+        closeAllDropdowns();
+        setDrawer(false);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape"){
+        closeAllDropdowns();
+        setDrawer(false);
+      }
+    });
+  </script>
+</body>
+</html>
