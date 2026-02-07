@@ -598,16 +598,27 @@
     const modalSubject = document.getElementById("euModalSubject");
     const modalBoards = document.getElementById("euModalBoards");
 
-    function openModal(subject, list){
+    function buildSubjectUrl(level, board, subject){
+      const params = new URLSearchParams({
+        level,
+        board,
+        subject
+      });
+      return `./subject.html?${params.toString()}`;
+    }
+
+    function openModal(level, subject, list){
       modalSubject.textContent = subject;
       modalBoards.innerHTML = "";
+
       list.forEach(name => {
         const a = document.createElement("a");
-        a.href = "#";
+        a.href = buildSubjectUrl(level, name, subject);
         a.className = "eu-boardCard";
         a.textContent = name;
         modalBoards.appendChild(a);
       });
+
       modal.classList.add("show");
       modal.setAttribute("aria-hidden", "false");
     }
@@ -621,7 +632,7 @@
       el.addEventListener("click", () => closeModal());
     });
 
-    // Subject click -> show boards popup
+    // Subject click -> show boards popup (small modal)
     document.querySelectorAll(".eu-subject").forEach(btn => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -634,7 +645,7 @@
           (qual === "IGCSE") ? BOARDS.IGCSE :
           BOARDS.OLEVEL;
 
-        openModal(subj || "Subject", list);
+        openModal(qual, subj || "Subject", list);
       });
     });
   </script>
