@@ -4,9 +4,187 @@
   <meta charset="UTF-8" />
   <title>ElevateU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body style="background:#000030;color:white;font-family:Arial,sans-serif;">
-  <h1>ElevateU</h1>
-  <p>Your site is live.</p>
-</body>
-</html>
+
+<body>
+  <!-- HEADER -->
+  <header class="eu-header">
+    <div class="eu-inner">
+      <!-- Left: brand -->
+      <a class="eu-brand" href="/">
+        <img class="eu-logo" src="assets/elevateu-logo.png" alt="ElevateU logo">
+        <span class="eu-brand-name">ElevateU</span>
+      </a>
+
+      <!-- Center: nav -->
+      <nav class="eu-nav" aria-label="Primary">
+        <a class="eu-nav-link" href="/hub">HUB</a>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="GCSE">GCSE <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="GCSE">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">GCSE OVERALL</div>
+              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+            </div>
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <a class="eu-dd-link" href="#">Biology</a>
+                <a class="eu-dd-link" href="#">Chemistry</a>
+                <a class="eu-dd-link" href="#">Combined Science</a>
+                <a class="eu-dd-link" href="#">Computer Science</a>
+                <a class="eu-dd-link" href="#">English Language</a>
+                <a class="eu-dd-link" href="#">English Literature</a>
+                <a class="eu-dd-link" href="#">French</a>
+                <a class="eu-dd-link" href="#">Geography</a>
+                <a class="eu-dd-link" href="#">German</a>
+                <a class="eu-dd-link" href="#">History</a>
+                <a class="eu-dd-link" href="#">Latin</a>
+                <a class="eu-dd-link" href="#">Mathematics</a>
+                <a class="eu-dd-link" href="#">Physical Education</a>
+                <a class="eu-dd-link" href="#">Physics</a>
+                <a class="eu-dd-link" href="#">Religious Studies</a>
+                <a class="eu-dd-link" href="#">Statistics</a>
+              </div>
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                <div class="eu-dd-scroll">
+                  <a class="eu-dd-link muted" href="#">Ancient History</a>
+                  <a class="eu-dd-link muted" href="#">Arabic</a>
+                  <a class="eu-dd-link muted" href="#">Art and Design</a>
+                  <a class="eu-dd-link muted" href="#">Astronomy</a>
+                  <a class="eu-dd-link muted" href="#">Biblical Hebrew</a>
+                  <a class="eu-dd-link muted" href="#">Built Environment</a>
+                  <a class="eu-dd-link muted" href="#">Business</a>
+                  <a class="eu-dd-link muted" href="#">Chinese</a>
+                  <a class="eu-dd-link muted" href="#">Citizenship Studies</a>
+                  <a class="eu-dd-link muted" href="#">Classical Civilisation</a>
+                  <a class="eu-dd-link muted" href="#">Classical Greek</a>
+                  <a class="eu-dd-link muted" href="#">Dance</a>
+                  <a class="eu-dd-link muted" href="#">Design and Technology</a>
+                  <a class="eu-dd-link muted" href="#">Digital Technology</a>
+                  <a class="eu-dd-link muted" href="#">Drama</a>
+                  <a class="eu-dd-link muted" href="#">Electronics</a>
+                  <a class="eu-dd-link muted" href="#">Film Studies</a>
+                  <a class="eu-dd-link muted" href="#">Food Preparation and Nutrition</a>
+                  <a class="eu-dd-link muted" href="#">Geology</a>
+                  <a class="eu-dd-link muted" href="#">Greek</a>
+                  <a class="eu-dd-link muted" href="#">Gujarati</a>
+                  <a class="eu-dd-link muted" href="#">Health and Social Care and Children's Care, Play, Learning and Development</a>
+                  <a class="eu-dd-link muted" href="#">Hebrew (Modern)</a>
+                  <a class="eu-dd-link muted" href="#">Information and Communication Technology</a>
+                  <a class="eu-dd-link muted" href="#">Italian</a>
+                  <a class="eu-dd-link muted" href="#">Japanese</a>
+                  <a class="eu-dd-link muted" href="#">Media Studies</a>
+                  <a class="eu-dd-link muted" href="#">Music</a>
+                  <a class="eu-dd-link muted" href="#">Panjabi</a>
+                  <a class="eu-dd-link muted" href="#">Persian</a>
+                  <a class="eu-dd-link muted" href="#">Polish</a>
+                  <a class="eu-dd-link muted" href="#">Psychology</a>
+                  <a class="eu-dd-link muted" href="#">Russian</a>
+                  <a class="eu-dd-link muted" href="#">Sociology</a>
+                  <a class="eu-dd-link muted" href="#">Spanish</a>
+                  <a class="eu-dd-link muted" href="#">Turkish</a>
+                  <a class="eu-dd-link muted" href="#">Urdu</a>
+                  <a class="eu-dd-link muted" href="#">Welsh Language</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="IGCSE">IGCSE <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="IGCSE">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">IGCSE OVERALL</div>
+              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+            </div>
+            <div class="eu-dd-note">Add the full IGCSE list here next (same format as GCSE).</div>
+          </div>
+        </div>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="OLEVEL">O LEVEL <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="OLEVEL">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">Cambridge O Levels OVERALL</div>
+              <button class="eu-toggle" type="button">Show exam boards <span class="eu-toggle-icon">+</span></button>
+            </div>
+            <div class="eu-dd-note">Add the full O Level list here next.</div>
+          </div>
+        </div>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="AS">AS <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="AS">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">AS</div>
+            </div>
+            <div class="eu-dd-note">Add AS subjects later.</div>
+          </div>
+        </div>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="ALEVEL">A LEVEL <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="ALEVEL">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">A LEVEL</div>
+            </div>
+            <div class="eu-dd-note">Add A Level subjects later.</div>
+          </div>
+        </div>
+
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" data-navbtn="OTHER">OTHER <span class="eu-caret">▾</span></button>
+          <div class="eu-dropdown" data-dropdown="OTHER">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">OTHER</div>
+            </div>
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <a class="eu-dd-link" href="#">Level 2</a>
+                <a class="eu-dd-link" href="#">Level 3</a>
+                <div class="eu-dd-divider"></div>
+                <a class="eu-dd-link" href="#">🔒 University Advice</a>
+                <a class="eu-dd-link" href="#">🔒 Admissions Test</a>
+                <a class="eu-dd-link" href="#">🔒 Personal Statement</a>
+                <a class="eu-dd-link" href="#">🔒 Interviews</a>
+              </div>
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Level 2</div>
+                <a class="eu-dd-link muted" href="#">AQA Further Maths</a>
+                <a class="eu-dd-link muted" href="#">WJEC Additional Maths</a>
+                <div class="eu-dd-subtitle" style="margin-top:12px;">Level 3</div>
+                <a class="eu-dd-link muted" href="#">OCR FSMQ Additional Maths</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right: search + auth + burger -->
+      <div class="eu-right">
+        <div class="eu-search" role="search">
+          <input class="eu-search-input" type="search" placeholder="Search subjects, papers, notes..." />
+        </div>
+
+        <div class="eu-auth">
+          <a class="eu-btn ghost" href="/sign-up">Sign up</a>
+          <a class="eu-btn solid" href="/sign-in">Sign in</a>
+        </div>
+
+        <button class="eu-burger" id="euBurger" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer -->
+    <div class="eu-drawer" id="euDrawer">
+      <div class="eu-drawer-inner">
+        <div class="eu-drawer-section">
+          <a class="eu-drawer-link" href="/hub">Hub</a>
+          <a class="eu-drawer-link" href="/articles">Articles</a>
+          <a class="eu-dra
