@@ -25,239 +25,98 @@
         <!-- GCSE -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="gcse">GCSE</button>
+
           <div class="eu-dropdown" id="dd-gcse" aria-label="GCSE dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">GCSE</div>
             </div>
 
             <div class="eu-dd-grid">
-              <div class="eu-dd-col">
+              <!-- LEFT: Subjects -->
+              <div class="eu-dd-col eu-dd-col--subjects">
                 <div class="eu-dd-subtitle">Subjects</div>
                 <div class="eu-dd-scroll">
-                  <!-- Give each subject the exam boards it supports -->
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Biology"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Biology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Chemistry"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Chemistry</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Combined Science"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Combined Science</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Computer Science"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Computer Science</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="English Language"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">English Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="English Literature"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">English Literature</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="French"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">French</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Geography"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Geography</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="German"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">German</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="History"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">History</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Latin"
-                     data-boards="OCR,WJEC">Latin</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Mathematics"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Mathematics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Physical Education"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Physical Education</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Physics"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Physics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Religious Studies"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Religious Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Statistics"
-                     data-boards="Edexcel,OCR">Statistics</a>
-
-                  <a class="eu-dd-link muted" href="#">Other Subjects (Past Papers only)</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Biology</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Chemistry</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Combined Science</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Computer Science</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">English Language</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">English Literature</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">French</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Geography</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">German</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">History</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Latin</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Mathematics</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Physical Education</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Physics</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Religious Studies</a>
+                  <a class="eu-dd-link eu-subject" data-exam="gcse" href="#">Statistics</a>
                 </div>
               </div>
 
-              <div class="eu-dd-col">
-                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
-                <div class="eu-dd-scroll">
-                  <!-- Put boards per subject (rough defaults; you can edit later) -->
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Ancient History"
-                     data-boards="AQA,OCR">Ancient History</a>
+              <!-- RIGHT: Panel (switches between Other Subjects and Exam Boards view) -->
+              <div class="eu-dd-col eu-dd-col--panel">
+                <!-- Default RIGHT view: Other Subjects -->
+                <div class="eu-rightview eu-rightview--other">
+                  <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link" href="#">Ancient History</a>
+                    <a class="eu-dd-link" href="#">Arabic</a>
+                    <a class="eu-dd-link" href="#">Art and Design</a>
+                    <a class="eu-dd-link" href="#">Astronomy</a>
+                    <a class="eu-dd-link" href="#">Biblical Hebrew</a>
+                    <a class="eu-dd-link" href="#">Built Environment</a>
+                    <a class="eu-dd-link" href="#">Business</a>
+                    <a class="eu-dd-link" href="#">Chinese</a>
+                    <a class="eu-dd-link" href="#">Citizenship Studies</a>
+                    <a class="eu-dd-link" href="#">Classical Civilisation</a>
+                    <a class="eu-dd-link" href="#">Classical Greek</a>
+                    <a class="eu-dd-link" href="#">Dance</a>
+                    <a class="eu-dd-link" href="#">Design and Technology</a>
+                    <a class="eu-dd-link" href="#">Digital Technology</a>
+                    <a class="eu-dd-link" href="#">Drama</a>
+                    <a class="eu-dd-link" href="#">Electronics</a>
+                    <a class="eu-dd-link" href="#">Film Studies</a>
+                    <a class="eu-dd-link" href="#">Food Preparation and Nutrition</a>
+                    <a class="eu-dd-link" href="#">Geology</a>
+                    <a class="eu-dd-link" href="#">Greek</a>
+                    <a class="eu-dd-link" href="#">Gujarati</a>
+                    <a class="eu-dd-link" href="#">Health & Social Care / Children's Care</a>
+                    <a class="eu-dd-link" href="#">Hebrew (Modern)</a>
+                    <a class="eu-dd-link" href="#">ICT</a>
+                    <a class="eu-dd-link" href="#">Italian</a>
+                    <a class="eu-dd-link" href="#">Japanese</a>
+                    <a class="eu-dd-link" href="#">Media Studies</a>
+                    <a class="eu-dd-link" href="#">Music</a>
+                    <a class="eu-dd-link" href="#">Panjabi</a>
+                    <a class="eu-dd-link" href="#">Persian</a>
+                    <a class="eu-dd-link" href="#">Polish</a>
+                    <a class="eu-dd-link" href="#">Psychology</a>
+                    <a class="eu-dd-link" href="#">Russian</a>
+                    <a class="eu-dd-link" href="#">Sociology</a>
+                    <a class="eu-dd-link" href="#">Spanish</a>
+                    <a class="eu-dd-link" href="#">Turkish</a>
+                    <a class="eu-dd-link" href="#">Urdu</a>
+                    <a class="eu-dd-link" href="#">Welsh Language</a>
+                  </div>
+                </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Arabic"
-                     data-boards="AQA,Edexcel">Arabic</a>
+                <!-- Subject RIGHT view: Exam boards -->
+                <div class="eu-rightview eu-rightview--boards" hidden>
+                  <div class="eu-subpanel-head">
+                    <button class="eu-subpanel-back" type="button" data-back>
+                      ← Back
+                    </button>
+                    <div class="eu-subpanel-title">
+                      <div class="eu-subpanel-subject" id="gcseSubjectTitle">Subject</div>
+                      <div class="eu-subpanel-small">Choose an exam board</div>
+                    </div>
+                  </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Art and Design"
-                     data-boards="AQA,Edexcel,OCR,WJEC">Art and Design</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Astronomy"
-                     data-boards="Edexcel">Astronomy</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Biblical Hebrew"
-                     data-boards="AQA">Biblical Hebrew</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Built Environment"
-                     data-boards="WJEC">Built Environment</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Business"
-                     data-boards="AQA,Edexcel,OCR,WJEC">Business</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Chinese"
-                     data-boards="Edexcel">Chinese</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Citizenship Studies"
-                     data-boards="AQA">Citizenship Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Classical Civilisation"
-                     data-boards="OCR">Classical Civilisation</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Classical Greek"
-                     data-boards="OCR">Classical Greek</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Dance"
-                     data-boards="AQA">Dance</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Design and Technology"
-                     data-boards="AQA,Edexcel,OCR,WJEC">Design and Technology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Digital Technology"
-                     data-boards="CCEA">Digital Technology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Drama"
-                     data-boards="AQA,Edexcel,OCR,WJEC">Drama</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Electronics"
-                     data-boards="OCR">Electronics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Film Studies"
-                     data-boards="WJEC">Film Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Food Preparation and Nutrition"
-                     data-boards="AQA,OCR,WJEC">Food Preparation and Nutrition</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Geology"
-                     data-boards="AQA">Geology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Greek"
-                     data-boards="OCR">Greek</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Gujarati"
-                     data-boards="AQA">Gujarati</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Health & Social Care / Children's Care"
-                     data-boards="OCR,WJEC">Health & Social Care / Children's Care</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Hebrew (Modern)"
-                     data-boards="AQA">Hebrew (Modern)</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="ICT"
-                     data-boards="OCR,WJEC,CCEA">ICT</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Italian"
-                     data-boards="AQA,Edexcel">Italian</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Japanese"
-                     data-boards="AQA">Japanese</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Media Studies"
-                     data-boards="AQA,OCR,WJEC">Media Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Music"
-                     data-boards="AQA,Edexcel,OCR,WJEC">Music</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Panjabi"
-                     data-boards="AQA">Panjabi</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Persian"
-                     data-boards="AQA">Persian</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Polish"
-                     data-boards="AQA">Polish</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Psychology"
-                     data-boards="AQA,Edexcel">Psychology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Russian"
-                     data-boards="AQA">Russian</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Sociology"
-                     data-boards="AQA,Edexcel">Sociology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Spanish"
-                     data-boards="AQA,Edexcel,OCR,WJEC,CCEA">Spanish</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Turkish"
-                     data-boards="AQA">Turkish</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Urdu"
-                     data-boards="AQA">Urdu</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="GCSE" data-subject="Welsh Language"
-                     data-boards="WJEC">Welsh Language</a>
+                  <div class="eu-board-grid" id="gcseBoardsGrid">
+                    <!-- JS injects board cards here -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -267,209 +126,85 @@
         <!-- IGCSE -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="igcse">IGCSE</button>
+
           <div class="eu-dropdown" id="dd-igcse" aria-label="IGCSE dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">IGCSE</div>
             </div>
 
             <div class="eu-dd-grid">
-              <div class="eu-dd-col">
+              <!-- LEFT: Subjects -->
+              <div class="eu-dd-col eu-dd-col--subjects">
                 <div class="eu-dd-subtitle">Subjects</div>
                 <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Biology"
-                     data-boards="Cambridge,Edexcel,OxfordAQA">Biology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Chemistry"
-                     data-boards="Cambridge,Edexcel,OxfordAQA">Chemistry</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Combined/Double Science"
-                     data-boards="Cambridge,Edexcel">Combined/Double Science</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Computer Science"
-                     data-boards="Cambridge,Edexcel">Computer Science</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Co-ordinated Sciences"
-                     data-boards="Cambridge">Co-ordinated Sciences</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="English - First Language"
-                     data-boards="Cambridge,Edexcel,OxfordAQA">English - First Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="English - Literature in English"
-                     data-boards="Cambridge,Edexcel">English - Literature in English</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="French"
-                     data-boards="Cambridge,Edexcel">French</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Further Pure Mathematics"
-                     data-boards="Cambridge">Further Pure Mathematics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Geography"
-                     data-boards="Cambridge,Edexcel">Geography</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="German"
-                     data-boards="Cambridge,Edexcel">German</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="History"
-                     data-boards="Cambridge,Edexcel">History</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Mathematics"
-                     data-boards="Cambridge,Edexcel,OxfordAQA">Mathematics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Physical Education"
-                     data-boards="Cambridge,Edexcel">Physical Education</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Physics"
-                     data-boards="Cambridge,Edexcel,OxfordAQA">Physics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Religious Studies"
-                     data-boards="Cambridge">Religious Studies</a>
-
-                  <a class="eu-dd-link muted" href="#">Other Subjects (Past Papers only)</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Biology</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Chemistry</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Combined/Double Science</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Computer Science</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Co-ordinated Sciences</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">English - First Language</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">English - Literature in English</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">French</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Further Pure Mathematics</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Geography</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">German</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">History</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Mathematics</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Physical Education</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Physics</a>
+                  <a class="eu-dd-link eu-subject" data-exam="igcse" href="#">Religious Studies</a>
                 </div>
               </div>
 
-              <div class="eu-dd-col">
-                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
-                <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Accounting"
-                     data-boards="Cambridge,Edexcel">Accounting</a>
+              <!-- RIGHT: Panel -->
+              <div class="eu-dd-col eu-dd-col--panel">
+                <div class="eu-rightview eu-rightview--other">
+                  <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link" href="#">Accounting</a>
+                    <a class="eu-dd-link" href="#">Afrikaans - Second Language</a>
+                    <a class="eu-dd-link" href="#">Agriculture</a>
+                    <a class="eu-dd-link" href="#">Arabic - First Language</a>
+                    <a class="eu-dd-link" href="#">Arabic - Foreign Language</a>
+                    <a class="eu-dd-link" href="#">Art & Design</a>
+                    <a class="eu-dd-link" href="#">Bangla</a>
+                    <a class="eu-dd-link" href="#">Bangladesh Studies</a>
+                    <a class="eu-dd-link" href="#">Bahasa Indonesia</a>
+                    <a class="eu-dd-link" href="#">Business</a>
+                    <a class="eu-dd-link" href="#">Business Studies</a>
+                    <a class="eu-dd-link" href="#">Chinese - First Language</a>
+                    <a class="eu-dd-link" href="#">Chinese - Second Language</a>
+                    <a class="eu-dd-link" href="#">Commerce</a>
+                    <a class="eu-dd-link" href="#">Design & Technology</a>
+                    <a class="eu-dd-link" href="#">Drama</a>
+                    <a class="eu-dd-link" href="#">Economics</a>
+                    <a class="eu-dd-link" href="#">English (as 2nd Language)</a>
+                    <a class="eu-dd-link" href="#">Greek as a First Language</a>
+                    <a class="eu-dd-link" href="#">Human Biology</a>
+                    <a class="eu-dd-link" href="#">ICT</a>
+                    <a class="eu-dd-link" href="#">Islamic Studies</a>
+                    <a class="eu-dd-link" href="#">Media Studies</a>
+                    <a class="eu-dd-link" href="#">Pakistan Studies</a>
+                    <a class="eu-dd-link" href="#">Psychology</a>
+                    <a class="eu-dd-link" href="#">Sinhala</a>
+                    <a class="eu-dd-link" href="#">Spanish - First Language</a>
+                    <a class="eu-dd-link" href="#">Spanish - Foreign Language</a>
+                    <a class="eu-dd-link" href="#">Swahili</a>
+                    <a class="eu-dd-link" href="#">Tamil</a>
+                    <a class="eu-dd-link" href="#">Travel & Tourism</a>
+                  </div>
+                </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Afrikaans - Second Language"
-                     data-boards="Cambridge">Afrikaans - Second Language</a>
+                <div class="eu-rightview eu-rightview--boards" hidden>
+                  <div class="eu-subpanel-head">
+                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
+                    <div class="eu-subpanel-title">
+                      <div class="eu-subpanel-subject" id="igcseSubjectTitle">Subject</div>
+                      <div class="eu-subpanel-small">Choose an exam board</div>
+                    </div>
+                  </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Agriculture"
-                     data-boards="Cambridge">Agriculture</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Arabic - First Language"
-                     data-boards="Cambridge">Arabic - First Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Arabic - Foreign Language"
-                     data-boards="Cambridge">Arabic - Foreign Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Art & Design"
-                     data-boards="Cambridge,Edexcel">Art & Design</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Bangla"
-                     data-boards="Cambridge">Bangla</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Bangladesh Studies"
-                     data-boards="Cambridge">Bangladesh Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Bahasa Indonesia"
-                     data-boards="Cambridge">Bahasa Indonesia</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Business"
-                     data-boards="Cambridge,Edexcel">Business</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Business Studies"
-                     data-boards="Cambridge">Business Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Chinese - First Language"
-                     data-boards="Cambridge">Chinese - First Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Chinese - Second Language"
-                     data-boards="Cambridge">Chinese - Second Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Commerce"
-                     data-boards="Cambridge">Commerce</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Design & Technology"
-                     data-boards="Cambridge,Edexcel">Design & Technology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Drama"
-                     data-boards="Cambridge">Drama</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Economics"
-                     data-boards="Cambridge,Edexcel">Economics</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="English (as 2nd Language)"
-                     data-boards="Cambridge">English (as 2nd Language)</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Greek as a First Language"
-                     data-boards="Cambridge">Greek as a First Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Human Biology"
-                     data-boards="Cambridge">Human Biology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="ICT"
-                     data-boards="Cambridge,Edexcel">ICT</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Islamic Studies"
-                     data-boards="Cambridge">Islamic Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Media Studies"
-                     data-boards="Cambridge">Media Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Pakistan Studies"
-                     data-boards="Cambridge">Pakistan Studies</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Psychology"
-                     data-boards="Cambridge,Edexcel">Psychology</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Sinhala"
-                     data-boards="Cambridge">Sinhala</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Spanish - First Language"
-                     data-boards="Cambridge">Spanish - First Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Spanish - Foreign Language"
-                     data-boards="Cambridge,Edexcel">Spanish - Foreign Language</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Swahili"
-                     data-boards="Cambridge">Swahili</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Tamil"
-                     data-boards="Cambridge">Tamil</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="IGCSE" data-subject="Travel & Tourism"
-                     data-boards="Cambridge">Travel & Tourism</a>
+                  <div class="eu-board-grid" id="igcseBoardsGrid"></div>
                 </div>
               </div>
             </div>
@@ -479,182 +214,78 @@
         <!-- O LEVEL -->
         <div class="eu-nav-item">
           <button class="eu-nav-btn" type="button" data-dd="olevel">O LEVEL</button>
+
           <div class="eu-dropdown" id="dd-olevel" aria-label="O Level dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">Cambridge O Levels</div>
             </div>
 
             <div class="eu-dd-grid">
-              <div class="eu-dd-col">
+              <!-- LEFT: Subjects -->
+              <div class="eu-dd-col eu-dd-col--subjects">
                 <div class="eu-dd-subtitle">Subjects</div>
                 <div class="eu-dd-scroll">
-                  <!-- O Level is Cambridge-only, but we still use the same panel for consistency -->
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Accounting - 7707"
-                     data-boards="Cambridge">Accounting - 7707</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Additional Mathematics - 4037"
-                     data-boards="Cambridge">Additional Mathematics - 4037</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Biology - 5090"
-                     data-boards="Cambridge">Biology - 5090</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Business - 7081"
-                     data-boards="Cambridge">Business - 7081</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Business Studies - 7115"
-                     data-boards="Cambridge">Business Studies - 7115</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Chemistry - 5070"
-                     data-boards="Cambridge">Chemistry - 5070</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Combined Science - 5129"
-                     data-boards="Cambridge">Combined Science - 5129</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Computer Science - 2210"
-                     data-boards="Cambridge">Computer Science - 2210</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Economics - 2281"
-                     data-boards="Cambridge">Economics - 2281</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="English Language - 1123"
-                     data-boards="Cambridge">English Language - 1123</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="French - 3015"
-                     data-boards="Cambridge">French - 3015</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Geography - 2217"
-                     data-boards="Cambridge">Geography - 2217</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="History - 2147"
-                     data-boards="Cambridge">History - 2147</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Literature in English - 2010"
-                     data-boards="Cambridge">Literature in English - 2010</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Mathematics (Syllabus D) - 4024"
-                     data-boards="Cambridge">Mathematics (Syllabus D) - 4024</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Physics - 5054"
-                     data-boards="Cambridge">Physics - 5054</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Religious Studies - 2048"
-                     data-boards="Cambridge">Religious Studies - 2048</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Statistics - 4040"
-                     data-boards="Cambridge">Statistics - 4040</a>
-
-                  <a class="eu-dd-link muted" href="#">Other Subjects (Past Papers only)</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Accounting - 7707</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Additional Mathematics - 4037</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Biology - 5090</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Business - 7081</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Business Studies - 7115</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Chemistry - 5070</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Combined Science - 5129</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Computer Science - 2210</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Economics - 2281</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">English Language - 1123</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">French - 3015</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Geography - 2217</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">History - 2147</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Literature in English - 2010</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Mathematics (Syllabus D) - 4024</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Physics - 5054</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Religious Studies - 2048</a>
+                  <a class="eu-dd-link eu-subject" data-exam="olevel" href="#">Statistics - 4040</a>
                 </div>
               </div>
 
-              <div class="eu-dd-col">
-                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
-                <div class="eu-dd-scroll">
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Agriculture - 5038"
-                     data-boards="Cambridge">Agriculture - 5038</a>
+              <!-- RIGHT: Panel -->
+              <div class="eu-dd-col eu-dd-col--panel">
+                <div class="eu-rightview eu-rightview--other">
+                  <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                  <div class="eu-dd-scroll">
+                    <a class="eu-dd-link" href="#">Agriculture - 5038</a>
+                    <a class="eu-dd-link" href="#">Arabic - 3180</a>
+                    <a class="eu-dd-link" href="#">Art & Design - 6090</a>
+                    <a class="eu-dd-link" href="#">Bangladesh Studies - 7094</a>
+                    <a class="eu-dd-link" href="#">Bengali - 3204</a>
+                    <a class="eu-dd-link" href="#">Biblical Studies - 2035</a>
+                    <a class="eu-dd-link" href="#">Commerce - 7100</a>
+                    <a class="eu-dd-link" href="#">Design & Technology - 6043</a>
+                    <a class="eu-dd-link" href="#">Environmental Management - 5014</a>
+                    <a class="eu-dd-link" href="#">Fashion & Textiles - 6130</a>
+                    <a class="eu-dd-link" href="#">Food & Nutrition - 6065</a>
+                    <a class="eu-dd-link" href="#">Global Perspectives - 2069</a>
+                    <a class="eu-dd-link" href="#">Hinduism - 2055</a>
+                    <a class="eu-dd-link" href="#">Islamic Studies - 2068</a>
+                    <a class="eu-dd-link" href="#">Islamiyat - 2058</a>
+                    <a class="eu-dd-link" href="#">Marine Science - 5180</a>
+                    <a class="eu-dd-link" href="#">Pakistan Studies - 2059</a>
+                    <a class="eu-dd-link" href="#">Sociology - 2251</a>
+                    <a class="eu-dd-link" href="#">Tamil - 3226</a>
+                    <a class="eu-dd-link" href="#">Travel & Tourism - 7096</a>
+                    <a class="eu-dd-link" href="#">Urdu - First Language - 3247</a>
+                    <a class="eu-dd-link" href="#">Urdu - Second Language - 3248</a>
+                  </div>
+                </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Arabic - 3180"
-                     data-boards="Cambridge">Arabic - 3180</a>
+                <div class="eu-rightview eu-rightview--boards" hidden>
+                  <div class="eu-subpanel-head">
+                    <button class="eu-subpanel-back" type="button" data-back>← Back</button>
+                    <div class="eu-subpanel-title">
+                      <div class="eu-subpanel-subject" id="olevelSubjectTitle">Subject</div>
+                      <div class="eu-subpanel-small">Choose an exam board</div>
+                    </div>
+                  </div>
 
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Art & Design - 6090"
-                     data-boards="Cambridge">Art & Design - 6090</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Bangladesh Studies - 7094"
-                     data-boards="Cambridge">Bangladesh Studies - 7094</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Bengali - 3204"
-                     data-boards="Cambridge">Bengali - 3204</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Biblical Studies - 2035"
-                     data-boards="Cambridge">Biblical Studies - 2035</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Commerce - 7100"
-                     data-boards="Cambridge">Commerce - 7100</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Design & Technology - 6043"
-                     data-boards="Cambridge">Design & Technology - 6043</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Environmental Management - 5014"
-                     data-boards="Cambridge">Environmental Management - 5014</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Fashion & Textiles - 6130"
-                     data-boards="Cambridge">Fashion & Textiles - 6130</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Food & Nutrition - 6065"
-                     data-boards="Cambridge">Food & Nutrition - 6065</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Global Perspectives - 2069"
-                     data-boards="Cambridge">Global Perspectives - 2069</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Hinduism - 2055"
-                     data-boards="Cambridge">Hinduism - 2055</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Islamic Studies - 2068"
-                     data-boards="Cambridge">Islamic Studies - 2068</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Islamiyat - 2058"
-                     data-boards="Cambridge">Islamiyat - 2058</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Marine Science - 5180"
-                     data-boards="Cambridge">Marine Science - 5180</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Pakistan Studies - 2059"
-                     data-boards="Cambridge">Pakistan Studies - 2059</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Sociology - 2251"
-                     data-boards="Cambridge">Sociology - 2251</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Tamil - 3226"
-                     data-boards="Cambridge">Tamil - 3226</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Travel & Tourism - 7096"
-                     data-boards="Cambridge">Travel & Tourism - 7096</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Urdu - First Language - 3247"
-                     data-boards="Cambridge">Urdu - First Language - 3247</a>
-
-                  <a class="eu-dd-link eu-subject-link" href="#"
-                     data-qual="O LEVEL" data-subject="Urdu - Second Language - 3248"
-                     data-boards="Cambridge">Urdu - Second Language - 3248</a>
+                  <div class="eu-board-grid" id="olevelBoardsGrid"></div>
                 </div>
               </div>
             </div>
@@ -701,7 +332,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </nav>
@@ -748,30 +378,6 @@
       </div>
     </div>
   </header>
-
-  <!-- SUBJECT -> EXAM BOARD PANEL (SaveMyExams-style) -->
-  <div class="eu-subject-overlay" id="subjectOverlay" hidden></div>
-
-  <section class="eu-subject-panel" id="subjectPanel" hidden aria-label="Exam board chooser">
-    <div class="eu-subject-top">
-      <div class="eu-subject-title" id="subjectTitle">Subject</div>
-      <button class="eu-subject-close" id="subjectClose" type="button" aria-label="Close">✕</button>
-    </div>
-
-    <div class="eu-subject-content">
-      <div class="eu-subject-col">
-        <div class="eu-subject-col-title">Exam boards</div>
-        <div class="eu-board-list" id="boardList"></div>
-      </div>
-
-      <div class="eu-subject-col">
-        <div class="eu-subject-col-title">Next</div>
-        <div class="eu-subject-note">
-          After you choose an exam board, you’ll go to that subject’s resources.
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- HERO -->
   <section class="eu-hero">
@@ -971,7 +577,7 @@
       drawer.setAttribute("aria-hidden", String(!open));
     });
 
-    // dropdowns (keep your logic, but dropdown CSS will make them centered)
+    // dropdowns (centered)
     const ddButtons = document.querySelectorAll("[data-dd]");
     const dropdowns = new Map();
     ddButtons.forEach(btn => {
@@ -985,6 +591,7 @@
         dd.classList.remove("show");
         btn.classList.remove("is-open");
       });
+      closeAllSubjectPanels();
     }
 
     ddButtons.forEach(btn => {
@@ -1000,94 +607,126 @@
       });
     });
 
-    // prevent clicks inside dropdown from closing
-    dropdowns.forEach((dd) => dd.addEventListener("click", (e) => e.stopPropagation()));
-
-    // subject -> board panel
-    const subjectOverlay = document.getElementById("subjectOverlay");
-    const subjectPanel = document.getElementById("subjectPanel");
-    const subjectTitle = document.getElementById("subjectTitle");
-    const boardList = document.getElementById("boardList");
-    const subjectClose = document.getElementById("subjectClose");
-
-    function openSubjectPanel(qual, subject, boardsCSV){
-      closeAllDropdowns();
-
-      subjectTitle.textContent = `${qual} • ${subject}`;
-      boardList.innerHTML = "";
-
-      const boards = (boardsCSV || "")
-        .split(",")
-        .map(s => s.trim())
-        .filter(Boolean);
-
-      if(boards.length === 0){
-        boardList.innerHTML = `<div class="eu-subject-note">No exam boards listed yet for this subject.</div>`;
-      } else {
-        boards.forEach(board => {
-          const a = document.createElement("a");
-          a.className = "eu-board-pill";
-          a.href = "#";
-          a.textContent = board;
-
-          // Later: route to a real page
-          a.addEventListener("click", (ev) => {
-            ev.preventDefault();
-            alert(`Selected: ${qual} → ${subject} → ${board}`);
-          });
-
-          boardList.appendChild(a);
-        });
-      }
-
-      subjectOverlay.hidden = false;
-      subjectPanel.hidden = false;
-      requestAnimationFrame(() => {
-        subjectOverlay.classList.add("show");
-        subjectPanel.classList.add("show");
-      });
-    }
-
-    function closeSubjectPanel(){
-      subjectOverlay.classList.remove("show");
-      subjectPanel.classList.remove("show");
-      setTimeout(() => {
-        subjectOverlay.hidden = true;
-        subjectPanel.hidden = true;
-      }, 140);
-    }
-
-    subjectClose.addEventListener("click", closeSubjectPanel);
-    subjectOverlay.addEventListener("click", closeSubjectPanel);
-
-    // subject link click
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest(".eu-subject-link");
-      if(!link) return;
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      openSubjectPanel(
-        link.dataset.qual || "",
-        link.dataset.subject || link.textContent.trim(),
-        link.dataset.boards || ""
-      );
-    });
-
-    // close dropdowns + panels on outside click / escape
+    // close dropdowns on outside click / escape
     document.addEventListener("click", () => closeAllDropdowns());
     document.addEventListener("keydown", (e) => {
       if(e.key === "Escape"){
         closeAllDropdowns();
-        closeSubjectPanel();
         drawer.classList.remove("show");
         burger.classList.remove("open");
         burger.setAttribute("aria-expanded", "false");
         drawer.setAttribute("aria-hidden", "true");
       }
     });
+
+    // prevent clicks inside dropdown from closing
+    dropdowns.forEach((dd) => dd.addEventListener("click", (e) => e.stopPropagation()));
+
+    // ===== Subject -> Exam Boards panel (SaveMyExams style) =====
+    const EXAM_BOARDS = {
+      gcse: ["AQA", "Edexcel", "OCR", "WJEC", "CCEA"],
+      igcse: ["Cambridge (CIE)", "Edexcel", "OxfordAQA"],
+      olevel: ["Cambridge"]
+    };
+
+    const RESOURCES = [
+      "Exam Questions",
+      "Revision Notes",
+      "Flashcards",
+      "Target Test",
+      "Mock Exams",
+      "Past Papers"
+    ];
+
+    function buildBoardCard(boardName){
+      const card = document.createElement("div");
+      card.className = "eu-board-card";
+
+      const h = document.createElement("div");
+      h.className = "eu-board-name";
+      h.textContent = boardName;
+
+      const list = document.createElement("div");
+      list.className = "eu-board-links";
+
+      RESOURCES.forEach(item => {
+        const a = document.createElement("a");
+        a.className = "eu-board-link";
+        a.href = "#";
+        a.textContent = item;
+        list.appendChild(a);
+      });
+
+      card.appendChild(h);
+      card.appendChild(list);
+      return card;
+    }
+
+    function showSubjectPanel(examKey, subjectText){
+      const dd = document.getElementById("dd-" + examKey);
+      if(!dd) return;
+
+      const otherView = dd.querySelector(".eu-rightview--other");
+      const boardsView = dd.querySelector(".eu-rightview--boards");
+      if(!otherView || !boardsView) return;
+
+      // swap views
+      otherView.hidden = true;
+      boardsView.hidden = false;
+
+      // set title
+      const titleEl = dd.querySelector("#" + examKey + "SubjectTitle");
+      if(titleEl) titleEl.textContent = subjectText;
+
+      // fill boards
+      const grid = dd.querySelector("#" + examKey + "BoardsGrid");
+      if(grid){
+        grid.innerHTML = "";
+        (EXAM_BOARDS[examKey] || []).forEach(b => grid.appendChild(buildBoardCard(b)));
+      }
+    }
+
+    function closeSubjectPanel(dd){
+      const otherView = dd.querySelector(".eu-rightview--other");
+      const boardsView = dd.querySelector(".eu-rightview--boards");
+      if(otherView && boardsView){
+        otherView.hidden = false;
+        boardsView.hidden = true;
+      }
+      dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
+    }
+
+    function closeAllSubjectPanels(){
+      document.querySelectorAll(".eu-dropdown").forEach(dd => closeSubjectPanel(dd));
+    }
+
+    // click subjects
+    document.querySelectorAll(".eu-subject").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const examKey = link.getAttribute("data-exam");
+        const subjectText = link.textContent.trim();
+
+        // active highlight within same dropdown
+        const dd = document.getElementById("dd-" + examKey);
+        if(dd){
+          dd.querySelectorAll(".eu-subject.is-active").forEach(x => x.classList.remove("is-active"));
+          link.classList.add("is-active");
+        }
+        showSubjectPanel(examKey, subjectText);
+      });
+    });
+
+    // back buttons
+    document.querySelectorAll("[data-back]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const dd = btn.closest(".eu-dropdown");
+        if(dd) closeSubjectPanel(dd);
+      });
+    });
   </script>
 </body>
 </html>
-
