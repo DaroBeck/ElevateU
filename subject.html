@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElevateU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <!-- HEADER (same as index, unchanged) -->
+  <header class="eu-header">
+    <div class="eu-header-inner">
+
+      <a class="eu-brand" href="./index.html">
+        <img class="eu-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
+        <span class="eu-brand-text">ElevateU</span>
+      </a>
+
+      <nav class="eu-nav" aria-label="Primary">
+        <a class="eu-nav-link" href="/hub">HUB</a>
+        <a class="eu-nav-link" href="./index.html">GCSE</a>
+        <a class="eu-nav-link" href="./index.html">IGCSE</a>
+        <a class="eu-nav-link" href="./index.html">O LEVEL</a>
+        <a class="eu-nav-link" href="/as">AS</a>
+        <a class="eu-nav-link" href="/a-level">A LEVEL</a>
+        <a class="eu-nav-link" href="./index.html">OTHER</a>
+      </nav>
+
+      <div class="eu-right">
+        <div class="eu-search">
+          <span class="eu-search-icon" aria-hidden="true">⌕</span>
+          <input class="eu-search-input" type="search" placeholder="Search..." aria-label="Search">
+        </div>
+
+        <div class="eu-auth">
+          <a class="eu-auth-link" href="/sign-up">Sign up</a>
+          <a class="eu-auth-link" href="/sign-in">Sign in</a>
+        </div>
+
+        <button class="eu-burger" id="euBurger" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="eu-drawer" id="euDrawer" aria-hidden="true">
+      <div class="eu-drawer-inner">
+        <div class="eu-drawer-section">
+          <div class="eu-drawer-title">Menu</div>
+          <a class="eu-drawer-link" href="/hub">Hub</a>
+          <a class="eu-drawer-link" href="/articles">Articles</a>
+          <a class="eu-drawer-link" href="/about">About Us</a>
+          <a class="eu-drawer-link" href="/contact">Contact Us</a>
+          <a class="eu-drawer-link" href="/faqs">FAQ’s</a>
+          <a class="eu-drawer-link" href="/support-volunteering">Support & Volunteering</a>
+          <a class="eu-drawer-link" href="/suggestions">Suggestions</a>
+          <a class="eu-drawer-link" href="/news">News and Updates Page</a>
+          <a class="eu-drawer-link" href="/privacy-terms">Privacy Policy and Terms of Service Page</a>
+        </div>
+
+        <div class="eu-drawer-section">
+          <div class="eu-drawer-title">Account</div>
+          <a class="eu-drawer-link" href="/sign-up">Sign up</a>
+          <a class="eu-drawer-link" href="/sign-in">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBJECT PAGE CONTENT -->
+  <main class="eu-subjectPage">
+    <div class="eu-container">
+      <!-- Title (formatted exactly as you want) -->
+      <h1 class="eu-subjectTitle" id="pageTitle">GCSE AQA Biology</h1>
+
+      <!-- Course content section -->
+      <section class="eu-subjectBlock">
+        <h2 class="eu-h2 eu-h2-tight">Course content, structure and overview</h2>
+
+        <div class="eu-specBox">
+          <div class="eu-specRow">
+            <div class="eu-specLabel">Official specification</div>
+            <div class="eu-specText">
+              Add the official specification details here (summary) + link below.
+            </div>
+          </div>
+
+          <div class="eu-specRow">
+            <div class="eu-specLabel">Official website link</div>
+            <div class="eu-specText">
+              <a href="#" class="eu-specLink" id="specLink" target="_blank" rel="noopener">Link to specification</a>
+            </div>
+          </div>
+
+          <div class="eu-specRow">
+            <div class="eu-specLabel">Our syllabus</div>
+            <div class="eu-specText">
+              Add your ElevateU syllabus + overview here.
+            </div>
+          </div>
+
+          <div class="eu-specRow">
+            <div class="eu-specLabel">Overview</div>
+            <div class="eu-specText">
+              Short overview of the course content and structure (topics, papers, assessments, etc.).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3x3 buttons -->
+      <section class="eu-subjectBlock">
+        <div class="eu-grid9">
+          <a class="eu-tile" href="#"><span>Study Guides</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Revision Notes</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Flashcards</span><span class="eu-tileArrow">→</span></a>
+
+          <a class="eu-tile" href="#"><span>Topic Questions</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Mock Papers</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Past Papers</span><span class="eu-tileArrow">→</span></a>
+
+          <a class="eu-tile" href="#"><span>Mindmaps</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Solved Papers &amp; Model Answers</span><span class="eu-tileArrow">→</span></a>
+          <a class="eu-tile" href="#"><span>Full Course</span><span class="eu-tileArrow">→</span></a>
+        </div>
+      </section>
+
+      <!-- Articles -->
+      <section class="eu-subjectBlock">
+        <h2 class="eu-h2 eu-h2-tight" id="articlesHeading">Articles and Resources for GCSE AQA Biology</h2>
+
+        <div class="eu-articlesBox">
+          <a class="eu-article" href="#">Example article/resource link 1</a>
+          <a class="eu-article" href="#">Example article/resource link 2</a>
+          <a class="eu-article" href="#">Example article/resource link 3</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (same style as index, unchanged) -->
+  <footer class="eu-footer">
+    <div class="eu-footer-inner">
+      <div>
+        <div class="eu-footer-logoRow">
+          <img class="eu-footer-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
+          <div class="eu-footer-brand">ElevateU</div>
+        </div>
+        <div class="eu-footer-note">Missing something? <a href="/suggestions">Let us know!</a></div>
+      </div>
+
+      <div class="eu-footer-cols">
+        <div>
+          <div class="eu-footer-title">Members</div>
+          <a class="eu-footer-link" href="/hub">Hub</a>
+          <a class="eu-footer-link" href="/account">Account</a>
+          <a class="eu-footer-link" href="/articles">Articles</a>
+          <a class="eu-footer-link" href="/faqs">FAQ’s</a>
+          <a class="eu-footer-link" href="/sign-in">Log out</a>
+        </div>
+
+        <div>
+          <div class="eu-footer-title">Company</div>
+          <a class="eu-footer-link" href="/about">About Us</a>
+          <a class="eu-footer-link" href="/jobs">Jobs</a>
+          <a class="eu-footer-link" href="/support-volunteering">Volunteering</a>
+          <a class="eu-footer-link" href="/privacy-terms">Terms</a>
+          <a class="eu-footer-link" href="/privacy-terms">Privacy</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="eu-social-row">
+          <a class="eu-social" href="#" aria-label="Social 1"></a>
+          <a class="eu-social" href="#" aria-label="Social 2"></a>
+          <a class="eu-social" href="#" aria-label="Social 3"></a>
+          <a class="eu-social" href="#" aria-label="Social 4"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="eu-footer-bottom">© <span id="year"></span> ElevateU</div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // hamburger drawer
+    const burger = document.getElementById("euBurger");
+    const drawer = document.getElementById("euDrawer");
+
+    if(burger && drawer){
+      burger.addEventListener("click", () => {
+        const open = drawer.classList.toggle("show");
+        burger.classList.toggle("open", open);
+        burger.setAttribute("aria-expanded", String(open));
+        drawer.setAttribute("aria-hidden", String(!open));
+      });
+    }
+
+    // Page title from URL params
+    const params = new URLSearchParams(location.search);
+    const level = (params.get("level") || "GCSE").toUpperCase();
+    const board = (params.get("board") || "AQA").toUpperCase();
+    const subject = params.get("subject") || "Biology";
+
+    const formatted = `${level} ${board} ${subject}`;
+    document.title = formatted + " | ElevateU";
+    document.getElementById("pageTitle").textContent = formatted;
+    document.getElementById("articlesHeading").textContent = `Articles and Resources for ${formatted}`;
+
+    // OPTIONAL: auto-spec link placeholders (you can replace later)
+    const specLink = document.getElementById("specLink");
+    if(specLink){
+      specLink.href = "#";
+      specLink.textContent = "Link to specification";
+    }
+  </script>
+</body>
+</html>
