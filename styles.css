@@ -199,8 +199,8 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
    DROPDOWNS (CENTERED)
    ========================= */
 .eu-dropdown{
-  position: fixed;              /* <— key fix: centers on viewport */
-  top: 92px;                    /* under header */
+  position: fixed;
+  top: 92px;
   left: 50%;
   transform: translateX(-50%);
   width: min(1040px, calc(100vw - 32px));
@@ -244,14 +244,8 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   min-height: 160px;
 }
 
-.eu-dd-col--subjects{
-  min-height: 360px;
-}
-
-.eu-dd-col--panel{
-  min-height: 360px;
-  position: relative;
-}
+.eu-dd-col--subjects{ min-height: 360px; }
+.eu-dd-col--panel{ min-height: 360px; position: relative; }
 
 .eu-dd-subtitle{
   color: var(--muted);
@@ -278,27 +272,21 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
 }
 .eu-dd-link:hover{ background: rgba(255,255,255,.06); text-decoration:none; }
 
-/* subject highlight */
 .eu-subject.is-active{
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.10);
 }
 
-/* divider */
 .eu-dd-divider{
   height:1px;
   background: rgba(255,255,255,.10);
   margin: 12px 0;
 }
 
-/* ===== Right view switching ===== */
-.eu-rightview{
-  height: 100%;
-}
+/* Right panel animation */
 .eu-rightview--boards{
   animation: euPanelIn .16s ease-out;
 }
-
 @keyframes euPanelIn{
   from { opacity: .0; transform: translateX(8px); }
   to   { opacity: 1;  transform: translateX(0px); }
@@ -309,15 +297,15 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   display:flex;
   align-items:flex-start;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .eu-subpanel-back{
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
   color: rgba(255,255,255,.92);
-  border-radius: 999px;
-  padding: 8px 12px;
+  border-radius: 10px;
+  padding: 7px 12px;
   cursor: pointer;
   font-weight: 850;
   font-size: 13px;
@@ -335,7 +323,7 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
 }
 .eu-subpanel-subject{
   font-weight: 950;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: .2px;
 }
 .eu-subpanel-small{
@@ -344,44 +332,27 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   font-size: 13px;
 }
 
-/* exam board grid */
-.eu-board-grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.eu-board-card{
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  border-radius: 14px;
-  padding: 12px;
-}
-
-.eu-board-name{
-  font-weight: 950;
-  letter-spacing: .2px;
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.eu-board-links{
+/* ===== EXAM BOARDS (NAMES ONLY) ===== */
+.eu-board-list{
   display:flex;
   flex-direction:column;
-  gap: 6px;
+  gap: 10px;
+  margin-top: 6px;
 }
 
-.eu-board-link{
+.eu-board-pill{
   display:block;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 13px;
-  color: rgba(255,255,255,.86);
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  font-weight: 950;
+  letter-spacing: .8px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
-.eu-board-link:hover{
-  background: rgba(255,255,255,.06);
+.eu-board-pill:hover{
+  background: rgba(255,255,255,.07);
   text-decoration:none;
 }
 
@@ -445,7 +416,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
     linear-gradient(180deg, #000018, #000012);
 }
 
-/* subtle grid */
 .eu-hero::before{
   content:"";
   position:absolute; inset:0;
@@ -457,7 +427,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   pointer-events:none;
 }
 
-/* stars */
 .eu-hero::after{
   content:"";
   position:absolute; inset:-25%;
@@ -483,7 +452,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   text-align:center;
 }
 
-/* twinkle */
 .eu-hero-inner::before{
   content:"";
   position:absolute;
@@ -499,7 +467,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   z-index: -1;
 }
 
-/* text sizes */
 .eu-hero-title{
   margin: 0;
   font-weight: 950;
@@ -513,7 +480,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   opacity: .92;
 }
 
-/* themed button */
 .eu-scroll{
   margin-top: 34px;
   border: 1px solid rgba(255,255,255,.16);
@@ -555,7 +521,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   font-weight: 900;
 }
 
-/* animations */
 @keyframes euStarsDrift2{
   0%   { transform: translate3d(0,0,0) rotate(9deg); }
   100% { transform: translate3d(-260px, 160px, 0) rotate(9deg); }
@@ -564,7 +529,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   0%   { opacity: .16; filter: blur(0px); }
   100% { opacity: .34; filter: blur(.4px); }
 }
-
 @media (prefers-reduced-motion: reduce){
   .eu-hero::after, .eu-hero-inner::before{ animation: none; }
 }
@@ -799,7 +763,6 @@ a:hover{ text-decoration: underline; text-underline-offset: 6px; }
   .eu-why-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .eu-footer-inner{ grid-template-columns: 1fr; }
   .eu-social-row{ justify-content:flex-start; }
-  .eu-board-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px){
