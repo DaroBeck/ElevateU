@@ -1,36 +1,39 @@
-// Simple, upgradable header interactions (no frameworks)
+// header.js — robust navigation + dropdowns + drawer (no frameworks)
+// Fixes: auth links breaking on different pages / nested routes
 
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return [...root.querySelectorAll(sel)]; }
 
-// Build a relative path to a file that lives at the project root (same folder as index.html)
+/**
+ * Return a path that works from ANY page depth.
+ * Example:
+ *  - from /index.html -> "auth.html"
+ *  - from /pages/subject.html -> "../auth.html"
+ */
 function rootRelative(fileName) {
-  // Example:
-  // /index.html -> depth 0 => "auth.html"
-  // /subject.html -> depth 0 => "auth.html"
-  // /pages/gcse/biology.html -> depth 2 => "../../auth.html"
-  const path = location.pathname;
+  const path = window.location.pathname || "/";
+  const clean = path.split("?")[0].split("#")[0];
 
-  // If you're serving from a real domain root, pathname starts with "/".
-  // Split and remove empty parts.
-  const parts = path.split("/").filter(Boolean);
+  // If you're at a folder URL (ends with "/"), treat it as index.html
+  const parts = clean.endsWith("/") ? clean.slice(0, -1).split("/") : clean.split("/");
 
-  // If the last segment looks like a file (has .html), exclude it from depth.
+  // If last part has a dot, it’s a file; otherwise it’s a folder
   const last = parts[parts.length - 1] || "";
-  const depth = last.includes(".") ? Math.max(0, parts.length - 1) : parts.length;
+  const isFile = last.includes(".");
+  const depth = Math.max(0, parts.length - 1 - (isFile ? 1 : 0)); // folders deep from root
 
   const prefix = depth === 0 ? "./" : "../".repeat(depth);
-  return prefix + fileName;
+  return `${prefix}${fileName}`;
 }
 
 function rewriteAuthLinks() {
   const authPath = rootRelative("auth.html");
 
-  qsa("[data-auth='signup']").forEach(a => {
+  qsa("a[data-auth='signup']").forEach(a => {
     a.setAttribute("href", `${authPath}?mode=signup#signup`);
   });
 
-  qsa("[data-auth='signin']").forEach(a => {
+  qsa("a[data-auth='signin']").forEach(a => {
     a.setAttribute("href", `${authPath}?mode=signin#signin`);
   });
 }
@@ -59,33 +62,58 @@ function toggleDrawer() {
   if (!drawer || !burger) return;
   const open = drawer.classList.toggle("show");
   burger.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", String(open));
+  drawer.setAttribute("aria-hidden", String(!open));
 }
 
+/**
+ * IMPORTANT: force auth navigation even if other handlers preventDefault.
+ * Capture phase so it runs before most bubbling handlers.
+ */
 document.addEventListener("click", (e) => {
-  // dropdown buttons
+  const authLink = e.target.closest("a[data-auth]");
+  if (authLink) {
+    // Ensure href is correct (in case header was injected late)
+    rewriteAuthLinks();
+
+    const href = authLink.getAttribute("href");
+    if (href) {
+      // Force navigation in a microtask after other handlers run
+      queueMicrotask(() => { window.location.href = href; });
+    }
+    return; // don’t interfere further
+  }
+
+  // Dropdown buttons
   const btn = e.target.closest("[data-navbtn]");
   if (btn) {
     e.preventDefault();
+    e.stopPropagation();
     toggleDropdown(btn.getAttribute("data-navbtn"));
     return;
   }
 
-  // burger
+  // Burger
   if (e.target.closest("#euBurger")) {
     e.preventDefault();
+    e.stopPropagation();
     toggleDrawer();
     return;
   }
 
-  // click outside closes dropdowns + drawer
+  // Click outside header closes dropdowns + drawer
   if (!e.target.closest(".eu-header")) {
     closeAllDropdowns();
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) burger.classList.remove("open");
+    if (burger) {
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    if (drawer) drawer.setAttribute("aria-hidden", "true");
   }
-});
+}, true);
 
 // ESC closes everything
 document.addEventListener("keydown", (e) => {
@@ -94,9 +122,15 @@ document.addEventListener("keydown", (e) => {
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) burger.classList.remove("open");
+    if (burger) {
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    if (drawer) drawer.setAttribute("aria-hidden", "true");
   }
 });
 
-// Run once on load
-rewriteAuthLinks();
+// On load, always rewrite auth links so they work on any page depth
+document.addEventListener("DOMContentLoaded", () => {
+  rewriteAuthLinks();
+});
