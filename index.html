@@ -13,19 +13,19 @@
     <div class="eu-header-inner">
 
       <!-- Brand -->
-      <a class="eu-brand" href="/">
+      <a class="eu-brand" href="./index.html">
         <img class="eu-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
         <span class="eu-brand-text">ElevateU</span>
       </a>
 
       <!-- Center Nav -->
       <nav class="eu-nav" aria-label="Primary">
-        <a class="eu-nav-link" href="/hub">HUB</a>
+        <a class="eu-nav-link" href="./hub.html">HUB</a>
 
         <!-- GCSE -->
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" type="button" data-dd="gcse">GCSE</button>
-          <div class="eu-dropdown" id="dd-gcse" aria-label="GCSE dropdown">
+          <button class="eu-nav-btn" type="button" data-navbtn="gcse">GCSE</button>
+          <div class="eu-dropdown" data-dropdown="gcse" id="dd-gcse" aria-label="GCSE dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">GCSE</div>
             </div>
@@ -104,8 +104,8 @@
 
         <!-- IGCSE -->
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" type="button" data-dd="igcse">IGCSE</button>
-          <div class="eu-dropdown" id="dd-igcse" aria-label="IGCSE dropdown">
+          <button class="eu-nav-btn" type="button" data-navbtn="igcse">IGCSE</button>
+          <div class="eu-dropdown" data-dropdown="igcse" id="dd-igcse" aria-label="IGCSE dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">IGCSE</div>
             </div>
@@ -175,8 +175,8 @@
 
         <!-- O LEVEL -->
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" type="button" data-dd="olevel">O LEVEL</button>
-          <div class="eu-dropdown" id="dd-olevel" aria-label="O Level dropdown">
+          <button class="eu-nav-btn" type="button" data-navbtn="olevel">O LEVEL</button>
+          <div class="eu-dropdown" data-dropdown="olevel" id="dd-olevel" aria-label="O Level dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">O LEVEL</div>
             </div>
@@ -238,15 +238,15 @@
         </div>
 
         <!-- AS -->
-        <a class="eu-nav-link" href="/as">AS</a>
+        <a class="eu-nav-link" href="./as.html">AS</a>
 
         <!-- A LEVEL -->
-        <a class="eu-nav-link" href="/a-level">A LEVEL</a>
+        <a class="eu-nav-link" href="./a-level.html">A LEVEL</a>
 
         <!-- OTHER -->
         <div class="eu-nav-item">
-          <button class="eu-nav-btn" type="button" data-dd="other">OTHER</button>
-          <div class="eu-dropdown" id="dd-other" aria-label="Other dropdown">
+          <button class="eu-nav-btn" type="button" data-navbtn="other">OTHER</button>
+          <div class="eu-dropdown" data-dropdown="other" id="dd-other" aria-label="Other dropdown">
             <div class="eu-dd-header">
               <div class="eu-dd-title">Other</div>
             </div>
@@ -290,9 +290,8 @@
         </div>
 
         <div class="eu-auth">
-          <!-- IMPORTANT: data-auth makes these work from ANY page depth via header.js -->
-          <a class="eu-auth-link" data-auth="signup" href="./auth.html#signup">Sign up</a>
-          <a class="eu-auth-link" data-auth="signin" href="./auth.html#signin">Sign in</a>
+          <a class="eu-auth-link" data-auth="signup" href="./auth.html?mode=signup#signup">Sign up</a>
+          <a class="eu-auth-link" data-auth="signin" href="./auth.html?mode=signin#signin">Sign in</a>
         </div>
 
         <button class="eu-burger" id="euBurger" type="button" aria-label="Menu" aria-expanded="false">
@@ -306,21 +305,21 @@
       <div class="eu-drawer-inner">
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Menu</div>
-          <a class="eu-drawer-link" href="/hub">Hub</a>
-          <a class="eu-drawer-link" href="/articles">Articles</a>
-          <a class="eu-drawer-link" href="/about">About Us</a>
-          <a class="eu-drawer-link" href="/contact">Contact Us</a>
-          <a class="eu-drawer-link" href="/faqs">FAQ’s</a>
-          <a class="eu-drawer-link" href="/support-volunteering">Support & Volunteering</a>
-          <a class="eu-drawer-link" href="/suggestions">Suggestions</a>
-          <a class="eu-drawer-link" href="/news">News and Updates Page</a>
-          <a class="eu-drawer-link" href="/privacy-terms">Privacy Policy and Terms of Service Page</a>
+          <a class="eu-drawer-link" href="./hub.html">Hub</a>
+          <a class="eu-drawer-link" href="./articles.html">Articles</a>
+          <a class="eu-drawer-link" href="./about.html">About Us</a>
+          <a class="eu-drawer-link" href="./contact.html">Contact Us</a>
+          <a class="eu-drawer-link" href="./faqs.html">FAQ’s</a>
+          <a class="eu-drawer-link" href="./support-volunteering.html">Support & Volunteering</a>
+          <a class="eu-drawer-link" href="./suggestions.html">Suggestions</a>
+          <a class="eu-drawer-link" href="./news.html">News and Updates Page</a>
+          <a class="eu-drawer-link" href="./privacy-terms.html">Privacy Policy and Terms of Service Page</a>
         </div>
 
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Account</div>
-          <a class="eu-drawer-link" data-auth="signup" href="./auth.html#signup">Sign up</a>
-          <a class="eu-drawer-link" data-auth="signin" href="./auth.html#signin">Sign in</a>
+          <a class="eu-drawer-link" data-auth="signup" href="./auth.html?mode=signup#signup">Sign up</a>
+          <a class="eu-drawer-link" data-auth="signin" href="./auth.html?mode=signin#signin">Sign in</a>
         </div>
       </div>
     </div>
@@ -345,7 +344,8 @@
       <h2 class="eu-h2">Our Special Features</h2>
 
       <div class="eu-cards">
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <!-- keep your existing feature links; if you want all to go to signup, add data-auth="signup" to each -->
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 3h8l2 2v16H7V3Z" stroke="currentColor" stroke-width="2" />
@@ -356,7 +356,7 @@
           <div class="eu-card-text">Clear, structured notes designed to make topics click fast.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="2"/>
@@ -366,7 +366,7 @@
           <div class="eu-card-text">Quick recall tools and visual maps to connect ideas.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M12 17h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -377,7 +377,7 @@
           <div class="eu-card-text">Target weak areas with focused questions by topic.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 4h10v16H7V4Z" stroke="currentColor" stroke-width="2"/>
@@ -388,7 +388,7 @@
           <div class="eu-card-text">Exam-style practice to build timing and confidence.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 3h10v18H7V3Z" stroke="currentColor" stroke-width="2"/>
@@ -399,7 +399,7 @@
           <div class="eu-card-text">Real past papers to master patterns and mark schemes.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="2"/>
@@ -410,7 +410,7 @@
           <div class="eu-card-text">Step-by-step solutions explaining how to earn marks.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M12 3l3 7 7 2-7 2-3 7-3-7-7-2 7-2 3-7Z" stroke="currentColor" stroke-width="2"/>
@@ -420,7 +420,7 @@
           <div class="eu-card-text">Timing plans, question order, and high-yield tactics.</div>
         </a>
 
-        <a class="eu-card" data-auth="signup" href="./auth.html#signup">
+        <a class="eu-card" data-auth="signup" href="./auth.html?mode=signup#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M6 8l6-4 6 4v12l-6 4-6-4V8Z" stroke="currentColor" stroke-width="2"/>
@@ -451,7 +451,7 @@
   <section class="eu-cta">
     <div class="eu-cta-inner">
       <h2 class="eu-cta-title">Elevate Beyond: Rise Above You Limits & Ace Your Exams</h2>
-      <a class="eu-cta-btn" data-auth="signup" href="./auth.html#signup">Sign up now</a>
+      <a class="eu-cta-btn" data-auth="signup" href="./auth.html?mode=signup#signup">Sign up now</a>
     </div>
   </section>
 
@@ -463,26 +463,26 @@
           <img class="eu-footer-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
           <div class="eu-footer-brand">ElevateU</div>
         </div>
-        <div class="eu-footer-note">Missing something? <a href="/suggestions">Let us know!</a></div>
+        <div class="eu-footer-note">Missing something? <a href="./suggestions.html">Let us know!</a></div>
       </div>
 
       <div class="eu-footer-cols">
         <div>
           <div class="eu-footer-title">Members</div>
-          <a class="eu-footer-link" href="/hub">Hub</a>
-          <a class="eu-footer-link" href="/account">Account</a>
-          <a class="eu-footer-link" href="/articles">Articles</a>
-          <a class="eu-footer-link" href="/faqs">FAQ’s</a>
-          <a class="eu-footer-link" href="/sign-in">Log out</a>
+          <a class="eu-footer-link" href="./hub.html">Hub</a>
+          <a class="eu-footer-link" href="./account.html">Account</a>
+          <a class="eu-footer-link" href="./articles.html">Articles</a>
+          <a class="eu-footer-link" href="./faqs.html">FAQ’s</a>
+          <a class="eu-footer-link" href="./auth.html?mode=signin#signin">Log out</a>
         </div>
 
         <div>
           <div class="eu-footer-title">Company</div>
-          <a class="eu-footer-link" href="/about">About Us</a>
-          <a class="eu-footer-link" href="/jobs">Jobs</a>
-          <a class="eu-footer-link" href="/support-volunteering">Volunteering</a>
-          <a class="eu-footer-link" href="/privacy-terms">Terms</a>
-          <a class="eu-footer-link" href="/privacy-terms">Privacy</a>
+          <a class="eu-footer-link" href="./about.html">About Us</a>
+          <a class="eu-footer-link" href="./jobs.html">Jobs</a>
+          <a class="eu-footer-link" href="./support-volunteering.html">Volunteering</a>
+          <a class="eu-footer-link" href="./privacy-terms.html">Terms</a>
+          <a class="eu-footer-link" href="./privacy-terms.html">Privacy</a>
         </div>
       </div>
 
@@ -530,63 +530,6 @@
       }
     });
 
-    // hamburger drawer
-    const burger = document.getElementById("euBurger");
-    const drawer = document.getElementById("euDrawer");
-
-    burger.addEventListener("click", () => {
-      const open = drawer.classList.toggle("show");
-      burger.classList.toggle("open", open);
-      burger.setAttribute("aria-expanded", String(open));
-      drawer.setAttribute("aria-hidden", String(!open));
-    });
-
-    // dropdowns
-    const ddButtons = document.querySelectorAll("[data-dd]");
-    const dropdowns = new Map();
-
-    ddButtons.forEach(btn => {
-      const key = btn.getAttribute("data-dd");
-      const dd = document.getElementById("dd-" + key);
-      if(dd) dropdowns.set(btn, dd);
-    });
-
-    function closeAllDropdowns(){
-      dropdowns.forEach((dd, btn) => {
-        dd.classList.remove("show");
-        btn.classList.remove("is-open");
-      });
-    }
-
-    ddButtons.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const dd = dropdowns.get(btn);
-        const isOpen = dd.classList.contains("show");
-        closeAllDropdowns();
-        if(!isOpen){
-          dd.classList.add("show");
-          btn.classList.add("is-open");
-        }
-      });
-    });
-
-    document.addEventListener("click", () => closeAllDropdowns());
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape"){
-        closeAllDropdowns();
-        closeModal();
-        drawer.classList.remove("show");
-        burger.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-        drawer.setAttribute("aria-hidden", "true");
-      }
-    });
-
-    dropdowns.forEach((dd) => {
-      dd.addEventListener("click", (e) => e.stopPropagation());
-    });
-
     // Exam boards per qualification (ONLY NAMES)
     const BOARDS = {
       GCSE: ["AQA", "EDEXCEL", "OCR", "WJEC", "EDUQAS"],
@@ -600,11 +543,7 @@
     const modalBoards = document.getElementById("euModalBoards");
 
     function buildSubjectUrl(level, board, subject){
-      const params = new URLSearchParams({
-        level,
-        board,
-        subject
-      });
+      const params = new URLSearchParams({ level, board, subject });
       return `./subject.html?${params.toString()}`;
     }
 
@@ -651,7 +590,7 @@
     });
   </script>
 
-  <!-- IMPORTANT: this rewrites the signup/signin links so they work from ANY page depth -->
+  <!-- Header interactions + auth fix -->
   <script src="./header.js"></script>
 </body>
 </html>
