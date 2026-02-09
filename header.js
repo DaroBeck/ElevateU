@@ -64,3 +64,29 @@ document.addEventListener("keydown", (e) => {
     if (burger) burger.classList.remove("open");
   }
 });
+
+// --- Auth link normaliser (add this at the bottom of header.js) ---
+(function () {
+  const AUTH_PATH = "./auth.html"; // auth.html is in the same folder as your pages
+
+  function fixAuthLinks() {
+    const signUpHref = `${AUTH_PATH}#signup`;
+    const signInHref = `${AUTH_PATH}#signin`;
+
+    // Update any sign-up links (header + CTA + cards if you add attributes)
+    document.querySelectorAll(
+      'a[href="/sign-up"], a[href="sign-up"], a[href="./sign-up"], a[href="auth.html"], a[href="./auth.html"], a[data-auth="signup"], a.eu-auth-link.signup, a[data-auth-cta="signup"]'
+    ).forEach(a => a.setAttribute("href", signUpHref));
+
+    // Update any sign-in links
+    document.querySelectorAll(
+      'a[href="/sign-in"], a[href="sign-in"], a[href="./sign-in"], a[data-auth="signin"], a.eu-auth-link.signin'
+    ).forEach(a => a.setAttribute("href", signInHref));
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fixAuthLinks);
+  } else {
+    fixAuthLinks();
+  }
+})();
