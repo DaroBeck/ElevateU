@@ -13,14 +13,14 @@
     <div class="eu-header-inner">
 
       <!-- Brand -->
-      <a class="eu-brand" href="./index.html">
+      <a class="eu-brand" href="/">
         <img class="eu-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
         <span class="eu-brand-text">ElevateU</span>
       </a>
 
       <!-- Center Nav -->
       <nav class="eu-nav" aria-label="Primary">
-        <a class="eu-nav-link" href="./hub.html">HUB</a>
+        <a class="eu-nav-link" href="/hub">HUB</a>
 
         <!-- GCSE -->
         <div class="eu-nav-item">
@@ -238,10 +238,10 @@
         </div>
 
         <!-- AS -->
-        <a class="eu-nav-link" href="./as.html">AS</a>
+        <a class="eu-nav-link" href="/as">AS</a>
 
         <!-- A LEVEL -->
-        <a class="eu-nav-link" href="./a-level.html">A LEVEL</a>
+        <a class="eu-nav-link" href="/a-level">A LEVEL</a>
 
         <!-- OTHER -->
         <div class="eu-nav-item">
@@ -290,7 +290,7 @@
         </div>
 
         <div class="eu-auth">
-          <!-- FIX: use hash routing so it works from any page -->
+          <!-- IMPORTANT: data-auth makes these work from ANY page depth via header.js -->
           <a class="eu-auth-link" data-auth="signup" href="./auth.html#signup">Sign up</a>
           <a class="eu-auth-link" data-auth="signin" href="./auth.html#signin">Sign in</a>
         </div>
@@ -306,20 +306,19 @@
       <div class="eu-drawer-inner">
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Menu</div>
-          <a class="eu-drawer-link" href="./hub.html">Hub</a>
-          <a class="eu-drawer-link" href="./articles.html">Articles</a>
-          <a class="eu-drawer-link" href="./about.html">About Us</a>
-          <a class="eu-drawer-link" href="./contact.html">Contact Us</a>
-          <a class="eu-drawer-link" href="./faqs.html">FAQ’s</a>
-          <a class="eu-drawer-link" href="./support-volunteering.html">Support & Volunteering</a>
-          <a class="eu-drawer-link" href="./suggestions.html">Suggestions</a>
-          <a class="eu-drawer-link" href="./news.html">News and Updates Page</a>
-          <a class="eu-drawer-link" href="./privacy-terms.html">Privacy Policy and Terms of Service Page</a>
+          <a class="eu-drawer-link" href="/hub">Hub</a>
+          <a class="eu-drawer-link" href="/articles">Articles</a>
+          <a class="eu-drawer-link" href="/about">About Us</a>
+          <a class="eu-drawer-link" href="/contact">Contact Us</a>
+          <a class="eu-drawer-link" href="/faqs">FAQ’s</a>
+          <a class="eu-drawer-link" href="/support-volunteering">Support & Volunteering</a>
+          <a class="eu-drawer-link" href="/suggestions">Suggestions</a>
+          <a class="eu-drawer-link" href="/news">News and Updates Page</a>
+          <a class="eu-drawer-link" href="/privacy-terms">Privacy Policy and Terms of Service Page</a>
         </div>
 
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Account</div>
-          <!-- FIX: same as header -->
           <a class="eu-drawer-link" data-auth="signup" href="./auth.html#signup">Sign up</a>
           <a class="eu-drawer-link" data-auth="signin" href="./auth.html#signin">Sign in</a>
         </div>
@@ -346,7 +345,6 @@
       <h2 class="eu-h2">Our Special Features</h2>
 
       <div class="eu-cards">
-        <!-- FIX: all feature cards should send to signup -->
         <a class="eu-card" data-auth="signup" href="./auth.html#signup">
           <div class="eu-card-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -453,7 +451,6 @@
   <section class="eu-cta">
     <div class="eu-cta-inner">
       <h2 class="eu-cta-title">Elevate Beyond: Rise Above You Limits & Ace Your Exams</h2>
-      <!-- FIX: signup hash -->
       <a class="eu-cta-btn" data-auth="signup" href="./auth.html#signup">Sign up now</a>
     </div>
   </section>
@@ -466,26 +463,26 @@
           <img class="eu-footer-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
           <div class="eu-footer-brand">ElevateU</div>
         </div>
-        <div class="eu-footer-note">Missing something? <a href="./suggestions.html">Let us know!</a></div>
+        <div class="eu-footer-note">Missing something? <a href="/suggestions">Let us know!</a></div>
       </div>
 
       <div class="eu-footer-cols">
         <div>
           <div class="eu-footer-title">Members</div>
-          <a class="eu-footer-link" href="./hub.html">Hub</a>
-          <a class="eu-footer-link" href="./account.html">Account</a>
-          <a class="eu-footer-link" href="./articles.html">Articles</a>
-          <a class="eu-footer-link" href="./faqs.html">FAQ’s</a>
-          <a class="eu-footer-link" href="./auth.html#signin">Log out</a>
+          <a class="eu-footer-link" href="/hub">Hub</a>
+          <a class="eu-footer-link" href="/account">Account</a>
+          <a class="eu-footer-link" href="/articles">Articles</a>
+          <a class="eu-footer-link" href="/faqs">FAQ’s</a>
+          <a class="eu-footer-link" href="/sign-in">Log out</a>
         </div>
 
         <div>
           <div class="eu-footer-title">Company</div>
-          <a class="eu-footer-link" href="./about.html">About Us</a>
-          <a class="eu-footer-link" href="./jobs.html">Jobs</a>
-          <a class="eu-footer-link" href="./support-volunteering.html">Volunteering</a>
-          <a class="eu-footer-link" href="./privacy-terms.html">Terms</a>
-          <a class="eu-footer-link" href="./privacy-terms.html">Privacy</a>
+          <a class="eu-footer-link" href="/about">About Us</a>
+          <a class="eu-footer-link" href="/jobs">Jobs</a>
+          <a class="eu-footer-link" href="/support-volunteering">Volunteering</a>
+          <a class="eu-footer-link" href="/privacy-terms">Terms</a>
+          <a class="eu-footer-link" href="/privacy-terms">Privacy</a>
         </div>
       </div>
 
@@ -653,5 +650,8 @@
       });
     });
   </script>
+
+  <!-- IMPORTANT: this rewrites the signup/signin links so they work from ANY page depth -->
+  <script src="./header.js"></script>
 </body>
 </html>
