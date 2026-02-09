@@ -24,10 +24,53 @@ function toggleDropdown(id) {
 function toggleDrawer() {
   const drawer = qs("#euDrawer");
   const burger = qs("#euBurger");
+  if (!drawer || !burger) return;
   const open = drawer.classList.toggle("show");
   burger.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", String(open));
+  drawer.setAttribute("aria-hidden", String(!open));
 }
 
+// -------- AUTH LINK FIX (works from ANY page depth) --------
+async function resolveAuthBase() {
+  // If you ever want to force a base (e.g. GitHub Pages repo), set:
+  // <meta name="eu-base" content="/YOURREPO/">
+  const metaBase = document.querySelector('meta[name="eu-base"]')?.content?.trim();
+  if (metaBase) return metaBase.endsWith("/") ? metaBase : (metaBase + "/");
+
+  // Try common relative depths first, then absolute root
+  const tries = ["./", "../", "../../", "../../../", "../../../../", "/"];
+  for (const prefix of tries) {
+    try {
+      // HEAD is fastest; some static hosts don’t allow HEAD, so fallback to GET.
+      let res = await fetch(prefix + "auth.html", { method: "HEAD", cache: "no-store" });
+      if (!res.ok) res = await fetch(prefix + "auth.html", { method: "GET", cache: "no-store" });
+      if (res.ok) return prefix;
+    } catch (_) {
+      // ignore and keep trying
+    }
+  }
+
+  // fallback: assume same folder
+  return "./";
+}
+
+async function wireAuthLinks() {
+  const base = await resolveAuthBase();
+
+  // Any element with data-auth="signup" or data-auth="signin" will be rewritten
+  qsa("[data-auth]").forEach(el => {
+    const mode = el.getAttribute("data-auth");
+    if (mode === "signup") el.setAttribute("href", base + "auth.html#signup");
+    if (mode === "signin") el.setAttribute("href", base + "auth.html#signin");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  wireAuthLinks();
+});
+
+// -------- Click handling --------
 document.addEventListener("click", (e) => {
   // dropdown buttons
   const btn = e.target.closest("[data-navbtn]");
@@ -50,7 +93,11 @@ document.addEventListener("click", (e) => {
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) burger.classList.remove("open");
+    if (burger) {
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    if (drawer) drawer.setAttribute("aria-hidden", "true");
   }
 });
 
@@ -61,32 +108,10 @@ document.addEventListener("keydown", (e) => {
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) burger.classList.remove("open");
+    if (burger) {
+      burger.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    if (drawer) drawer.setAttribute("aria-hidden", "true");
   }
 });
-
-// --- Auth link normaliser (add this at the bottom of header.js) ---
-(function () {
-  const AUTH_PATH = "./auth.html"; // auth.html is in the same folder as your pages
-
-  function fixAuthLinks() {
-    const signUpHref = `${AUTH_PATH}#signup`;
-    const signInHref = `${AUTH_PATH}#signin`;
-
-    // Update any sign-up links (header + CTA + cards if you add attributes)
-    document.querySelectorAll(
-      'a[href="/sign-up"], a[href="sign-up"], a[href="./sign-up"], a[href="auth.html"], a[href="./auth.html"], a[data-auth="signup"], a.eu-auth-link.signup, a[data-auth-cta="signup"]'
-    ).forEach(a => a.setAttribute("href", signUpHref));
-
-    // Update any sign-in links
-    document.querySelectorAll(
-      'a[href="/sign-in"], a[href="sign-in"], a[href="./sign-in"], a[data-auth="signin"], a.eu-auth-link.signin'
-    ).forEach(a => a.setAttribute("href", signInHref));
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", fixAuthLinks);
-  } else {
-    fixAuthLinks();
-  }
-})();
