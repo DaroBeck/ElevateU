@@ -3,6 +3,38 @@
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return [...root.querySelectorAll(sel)]; }
 
+// Build a relative path to a file that lives at the project root (same folder as index.html)
+function rootRelative(fileName) {
+  // Example:
+  // /index.html -> depth 0 => "auth.html"
+  // /subject.html -> depth 0 => "auth.html"
+  // /pages/gcse/biology.html -> depth 2 => "../../auth.html"
+  const path = location.pathname;
+
+  // If you're serving from a real domain root, pathname starts with "/".
+  // Split and remove empty parts.
+  const parts = path.split("/").filter(Boolean);
+
+  // If the last segment looks like a file (has .html), exclude it from depth.
+  const last = parts[parts.length - 1] || "";
+  const depth = last.includes(".") ? Math.max(0, parts.length - 1) : parts.length;
+
+  const prefix = depth === 0 ? "./" : "../".repeat(depth);
+  return prefix + fileName;
+}
+
+function rewriteAuthLinks() {
+  const authPath = rootRelative("auth.html");
+
+  qsa("[data-auth='signup']").forEach(a => {
+    a.setAttribute("href", `${authPath}?mode=signup#signup`);
+  });
+
+  qsa("[data-auth='signin']").forEach(a => {
+    a.setAttribute("href", `${authPath}?mode=signin#signin`);
+  });
+}
+
 function closeAllDropdowns() {
   qsa("[data-dropdown]").forEach(d => d.classList.remove("show"));
   qsa("[data-navbtn]").forEach(b => b.classList.remove("is-open"));
@@ -27,50 +59,8 @@ function toggleDrawer() {
   if (!drawer || !burger) return;
   const open = drawer.classList.toggle("show");
   burger.classList.toggle("open", open);
-  burger.setAttribute("aria-expanded", String(open));
-  drawer.setAttribute("aria-hidden", String(!open));
 }
 
-// -------- AUTH LINK FIX (works from ANY page depth) --------
-async function resolveAuthBase() {
-  // If you ever want to force a base (e.g. GitHub Pages repo), set:
-  // <meta name="eu-base" content="/YOURREPO/">
-  const metaBase = document.querySelector('meta[name="eu-base"]')?.content?.trim();
-  if (metaBase) return metaBase.endsWith("/") ? metaBase : (metaBase + "/");
-
-  // Try common relative depths first, then absolute root
-  const tries = ["./", "../", "../../", "../../../", "../../../../", "/"];
-  for (const prefix of tries) {
-    try {
-      // HEAD is fastest; some static hosts don’t allow HEAD, so fallback to GET.
-      let res = await fetch(prefix + "auth.html", { method: "HEAD", cache: "no-store" });
-      if (!res.ok) res = await fetch(prefix + "auth.html", { method: "GET", cache: "no-store" });
-      if (res.ok) return prefix;
-    } catch (_) {
-      // ignore and keep trying
-    }
-  }
-
-  // fallback: assume same folder
-  return "./";
-}
-
-async function wireAuthLinks() {
-  const base = await resolveAuthBase();
-
-  // Any element with data-auth="signup" or data-auth="signin" will be rewritten
-  qsa("[data-auth]").forEach(el => {
-    const mode = el.getAttribute("data-auth");
-    if (mode === "signup") el.setAttribute("href", base + "auth.html#signup");
-    if (mode === "signin") el.setAttribute("href", base + "auth.html#signin");
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  wireAuthLinks();
-});
-
-// -------- Click handling --------
 document.addEventListener("click", (e) => {
   // dropdown buttons
   const btn = e.target.closest("[data-navbtn]");
@@ -93,11 +83,7 @@ document.addEventListener("click", (e) => {
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) {
-      burger.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-    }
-    if (drawer) drawer.setAttribute("aria-hidden", "true");
+    if (burger) burger.classList.remove("open");
   }
 });
 
@@ -108,10 +94,9 @@ document.addEventListener("keydown", (e) => {
     const drawer = qs("#euDrawer");
     const burger = qs("#euBurger");
     if (drawer) drawer.classList.remove("show");
-    if (burger) {
-      burger.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-    }
-    if (drawer) drawer.setAttribute("aria-hidden", "true");
+    if (burger) burger.classList.remove("open");
   }
 });
+
+// Run once on load
+rewriteAuthLinks();
