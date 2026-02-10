@@ -8,25 +8,276 @@
 </head>
 
 <body>
-  <!-- HEADER (same as index, unchanged) -->
+  <!-- HEADER (same structure as index.html, but auth links are data-auth so they always work) -->
   <header class="eu-header">
     <div class="eu-header-inner">
 
+      <!-- Brand -->
       <a class="eu-brand" href="./index.html">
         <img class="eu-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
         <span class="eu-brand-text">ElevateU</span>
       </a>
 
+      <!-- Center Nav -->
       <nav class="eu-nav" aria-label="Primary">
-        <a class="eu-nav-link" href="/hub">HUB</a>
-        <a class="eu-nav-link" href="./index.html">GCSE</a>
-        <a class="eu-nav-link" href="./index.html">IGCSE</a>
-        <a class="eu-nav-link" href="./index.html">O LEVEL</a>
-        <a class="eu-nav-link" href="/as">AS</a>
-        <a class="eu-nav-link" href="/a-level">A LEVEL</a>
-        <a class="eu-nav-link" href="./index.html">OTHER</a>
+        <a class="eu-nav-link" href="./hub">HUB</a>
+
+        <!-- GCSE -->
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" type="button" data-dd="gcse">GCSE</button>
+          <div class="eu-dropdown" id="dd-gcse" aria-label="GCSE dropdown">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">GCSE</div>
+            </div>
+
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Subjects</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Biology">Biology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Chemistry">Chemistry</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Combined Science">Combined Science</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Computer Science">Computer Science</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|English Language">English Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|English Literature">English Literature</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|French">French</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Geography">Geography</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|German">German</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|History">History</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Latin">Latin</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Mathematics">Mathematics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Physical Education">Physical Education</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Physics">Physics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Religious Studies">Religious Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Statistics">Statistics</button>
+                </div>
+              </div>
+
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Ancient History">Ancient History</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Arabic">Arabic</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Art and Design">Art and Design</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Astronomy">Astronomy</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Biblical Hebrew">Biblical Hebrew</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Built Environment">Built Environment</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Business">Business</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Chinese">Chinese</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Citizenship Studies">Citizenship Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Classical Civilisation">Classical Civilisation</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Classical Greek">Classical Greek</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Dance">Dance</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Design and Technology">Design and Technology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Digital Technology">Digital Technology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Drama">Drama</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Electronics">Electronics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Film Studies">Film Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Food Preparation and Nutrition">Food Preparation and Nutrition</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Geology">Geology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Greek">Greek</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Gujarati">Gujarati</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Health & Social Care / Children's Care">Health & Social Care / Children's Care</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Hebrew (Modern)">Hebrew (Modern)</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|ICT">ICT</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Italian">Italian</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Japanese">Japanese</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Media Studies">Media Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Music">Music</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Panjabi">Panjabi</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Persian">Persian</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Polish">Polish</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Psychology">Psychology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Russian">Russian</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Sociology">Sociology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Spanish">Spanish</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Turkish">Turkish</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Urdu">Urdu</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="GCSE|Welsh Language">Welsh Language</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IGCSE -->
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" type="button" data-dd="igcse">IGCSE</button>
+          <div class="eu-dropdown" id="dd-igcse" aria-label="IGCSE dropdown">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">IGCSE</div>
+            </div>
+
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Subjects</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Biology">Biology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Chemistry">Chemistry</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Combined/Double Science">Combined/Double Science</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Computer Science">Computer Science</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Co-ordinated Sciences">Co-ordinated Sciences</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|English - First Language">English - First Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|English - Literature in English">English - Literature in English</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|French">French</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Further Pure Mathematics">Further Pure Mathematics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Geography">Geography</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|German">German</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|History">History</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Mathematics">Mathematics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Physical Education">Physical Education</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Physics">Physics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Religious Studies">Religious Studies</button>
+                </div>
+              </div>
+
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Accounting">Accounting</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Afrikaans - Second Language">Afrikaans - Second Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Agriculture">Agriculture</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Arabic - First Language">Arabic - First Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Arabic - Foreign Language">Arabic - Foreign Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Art & Design">Art & Design</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Bangla">Bangla</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Bangladesh Studies">Bangladesh Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Bahasa Indonesia">Bahasa Indonesia</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Business">Business</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Business Studies">Business Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Chinese - First Language">Chinese - First Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Chinese - Second Language">Chinese - Second Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Commerce">Commerce</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Design & Technology">Design & Technology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Drama">Drama</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Economics">Economics</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|English (as 2nd Language)">English (as 2nd Language)</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Greek as a First Language">Greek as a First Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Human Biology">Human Biology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|ICT">ICT</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Islamic Studies">Islamic Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Media Studies">Media Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Pakistan Studies">Pakistan Studies</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Psychology">Psychology</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Sinhala">Sinhala</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Spanish - First Language">Spanish - First Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Spanish - Foreign Language">Spanish - Foreign Language</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Swahili">Swahili</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Tamil">Tamil</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="IGCSE|Travel & Tourism">Travel & Tourism</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- O LEVEL -->
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" type="button" data-dd="olevel">O LEVEL</button>
+          <div class="eu-dropdown" id="dd-olevel" aria-label="O Level dropdown">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">O LEVEL</div>
+            </div>
+
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Subjects</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Accounting - 7707">Accounting - 7707</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Additional Mathematics - 4037">Additional Mathematics - 4037</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Biology - 5090">Biology - 5090</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Business - 7081">Business - 7081</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Business Studies - 7115">Business Studies - 7115</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Chemistry - 5070">Chemistry - 5070</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Combined Science - 5129">Combined Science - 5129</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Computer Science - 2210">Computer Science - 2210</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Economics - 2281">Economics - 2281</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|English Language - 1123">English Language - 1123</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|French - 3015">French - 3015</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Geography - 2217">Geography - 2217</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|History - 2147">History - 2147</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Literature in English - 2010">Literature in English - 2010</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Mathematics (Syllabus D) - 4024">Mathematics (Syllabus D) - 4024</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Physics - 5054">Physics - 5054</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Religious Studies - 2048">Religious Studies - 2048</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Statistics - 4040">Statistics - 4040</button>
+                </div>
+              </div>
+
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Other Subjects (Past Papers only)</div>
+                <div class="eu-dd-scroll">
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Agriculture - 5038">Agriculture - 5038</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Arabic - 3180">Arabic - 3180</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Art & Design - 6090">Art & Design - 6090</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Bangladesh Studies - 7094">Bangladesh Studies - 7094</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Bengali - 3204">Bengali - 3204</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Biblical Studies - 2035">Biblical Studies - 2035</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Commerce - 7100">Commerce - 7100</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Design & Technology - 6043">Design & Technology - 6043</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Environmental Management - 5014">Environmental Management - 5014</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Fashion & Textiles - 6130">Fashion & Textiles - 6130</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Food & Nutrition - 6065">Food & Nutrition - 6065</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Global Perspectives - 2069">Global Perspectives - 2069</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Hinduism - 2055">Hinduism - 2055</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Islamic Studies - 2068">Islamic Studies - 2068</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Islamiyat - 2058">Islamiyat - 2058</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Marine Science - 5180">Marine Science - 5180</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Pakistan Studies - 2059">Pakistan Studies - 2059</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Sociology - 2251">Sociology - 2251</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Tamil - 3226">Tamil - 3226</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Travel & Tourism - 7096">Travel & Tourism - 7096</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Urdu - First Language - 3247">Urdu - First Language - 3247</button>
+                  <button class="eu-dd-link eu-subject" type="button" data-subject="OLEVEL|Urdu - Second Language - 3248">Urdu - Second Language - 3248</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="eu-nav-link" href="./as">AS</a>
+        <a class="eu-nav-link" href="./a-level">A LEVEL</a>
+
+        <!-- OTHER -->
+        <div class="eu-nav-item">
+          <button class="eu-nav-btn" type="button" data-dd="other">OTHER</button>
+          <div class="eu-dropdown" id="dd-other" aria-label="Other dropdown">
+            <div class="eu-dd-header">
+              <div class="eu-dd-title">Other</div>
+            </div>
+
+            <div class="eu-dd-grid">
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Level 2</div>
+                <div class="eu-dd-scroll">
+                  <a class="eu-dd-link" href="#">AQA Further Maths</a>
+                  <a class="eu-dd-link" href="#">WJEC Additional Maths</a>
+                </div>
+
+                <div class="eu-dd-divider"></div>
+
+                <div class="eu-dd-subtitle">Level 3</div>
+                <div class="eu-dd-scroll">
+                  <a class="eu-dd-link" href="#">OCR FSMQ Additional Maths</a>
+                </div>
+              </div>
+
+              <div class="eu-dd-col">
+                <div class="eu-dd-subtitle">Locked</div>
+                <div class="eu-dd-scroll">
+                  <a class="eu-dd-link locked" href="#"><span class="lock">🔒</span> University Advice</a>
+                  <a class="eu-dd-link locked" href="#"><span class="lock">🔒</span> Admissions Test</a>
+                  <a class="eu-dd-link locked" href="#"><span class="lock">🔒</span> Personal Statement</a>
+                  <a class="eu-dd-link locked" href="#"><span class="lock">🔒</span> Interviews</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </nav>
 
+      <!-- Right side -->
       <div class="eu-right">
         <div class="eu-search">
           <span class="eu-search-icon" aria-hidden="true">⌕</span>
@@ -34,8 +285,8 @@
         </div>
 
         <div class="eu-auth">
-          <a class="eu-auth-link" href="/sign-up">Sign up</a>
-          <a class="eu-auth-link" href="/sign-in">Sign in</a>
+          <a class="eu-auth-link" data-auth="signup" href="#">Sign up</a>
+          <a class="eu-auth-link" data-auth="signin" href="#">Sign in</a>
         </div>
 
         <button class="eu-burger" id="euBurger" type="button" aria-label="Menu" aria-expanded="false">
@@ -44,179 +295,219 @@
       </div>
     </div>
 
+    <!-- Drawer -->
     <div class="eu-drawer" id="euDrawer" aria-hidden="true">
       <div class="eu-drawer-inner">
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Menu</div>
-          <a class="eu-drawer-link" href="/hub">Hub</a>
-          <a class="eu-drawer-link" href="/articles">Articles</a>
-          <a class="eu-drawer-link" href="/about">About Us</a>
-          <a class="eu-drawer-link" href="/contact">Contact Us</a>
-          <a class="eu-drawer-link" href="/faqs">FAQ’s</a>
-          <a class="eu-drawer-link" href="/support-volunteering">Support & Volunteering</a>
-          <a class="eu-drawer-link" href="/suggestions">Suggestions</a>
-          <a class="eu-drawer-link" href="/news">News and Updates Page</a>
-          <a class="eu-drawer-link" href="/privacy-terms">Privacy Policy and Terms of Service Page</a>
+          <a class="eu-drawer-link" href="./hub">Hub</a>
+          <a class="eu-drawer-link" href="./articles">Articles</a>
+          <a class="eu-drawer-link" href="./about">About Us</a>
+          <a class="eu-drawer-link" href="./contact">Contact Us</a>
+          <a class="eu-drawer-link" href="./faqs">FAQ’s</a>
+          <a class="eu-drawer-link" href="./support-volunteering">Support & Volunteering</a>
+          <a class="eu-drawer-link" href="./suggestions">Suggestions</a>
+          <a class="eu-drawer-link" href="./news">News and Updates Page</a>
+          <a class="eu-drawer-link" href="./privacy-terms">Privacy Policy and Terms of Service Page</a>
         </div>
 
         <div class="eu-drawer-section">
           <div class="eu-drawer-title">Account</div>
-          <a class="eu-drawer-link" href="/sign-up">Sign up</a>
-          <a class="eu-drawer-link" href="/sign-in">Sign in</a>
+          <a class="eu-drawer-link" data-auth="signup" href="#">Sign up</a>
+          <a class="eu-drawer-link" data-auth="signin" href="#">Sign in</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- SUBJECT PAGE CONTENT -->
-  <main class="eu-subjectPage">
-    <div class="eu-container">
-      <!-- Title (formatted exactly as you want) -->
-      <h1 class="eu-subjectTitle" id="pageTitle">GCSE AQA Biology</h1>
+  <!-- SUBJECT CONTENT -->
+  <main class="eu-section">
+    <div class="eu-container" style="max-width: 1100px;">
+      <h1 class="eu-hero-title" style="text-align:left; font-size: clamp(34px, 4vw, 56px);" id="pageTitle">
+        GCSE AQA Biology
+      </h1>
 
-      <!-- Course content section -->
-      <section class="eu-subjectBlock">
-        <h2 class="eu-h2 eu-h2-tight">Course content, structure and overview</h2>
+      <h2 class="eu-h2" style="margin-top: 26px;">Course content, structure and overview</h2>
 
-        <div class="eu-specBox">
-          <div class="eu-specRow">
-            <div class="eu-specLabel">Official specification</div>
-            <div class="eu-specText">
-              Add the official specification details here (summary) + link below.
-            </div>
-          </div>
+      <div class="eu-drawer-section" style="border-radius: 18px;">
+        <p style="margin:0; color: rgba(255,255,255,.85); font-weight:650; line-height:1.6;">
+          Official specification (link), our syllabus, overview of the content, structure, and what to expect.
+        </p>
 
-          <div class="eu-specRow">
-            <div class="eu-specLabel">Official website link</div>
-            <div class="eu-specText">
-              <a href="#" class="eu-specLink" id="specLink" target="_blank" rel="noopener">Link to specification</a>
-            </div>
-          </div>
-
-          <div class="eu-specRow">
-            <div class="eu-specLabel">Our syllabus</div>
-            <div class="eu-specText">
-              Add your ElevateU syllabus + overview here.
-            </div>
-          </div>
-
-          <div class="eu-specRow">
-            <div class="eu-specLabel">Overview</div>
-            <div class="eu-specText">
-              Short overview of the course content and structure (topics, papers, assessments, etc.).
-            </div>
-          </div>
+        <div style="margin-top: 14px;">
+          <a class="eu-cta-btn" style="background: rgba(255,255,255,.12); color: var(--text); border: 1px solid rgba(255,255,255,.18);" href="#" id="specLink">
+            View official specification
+          </a>
         </div>
-      </section>
+      </div>
+
+      <h2 class="eu-h2" style="margin-top: 34px;">Tools</h2>
 
       <!-- 3x3 buttons -->
-      <section class="eu-subjectBlock">
-        <div class="eu-grid9">
-          <a class="eu-tile" href="#"><span>Subject Mastery</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Revision Notes</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Flashcards</span><span class="eu-tileArrow">→</span></a>
+      <div class="eu-cards" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Study Guides</div>
+          <div class="eu-card-text">Structured content & summaries.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Revision Notes</div>
+          <div class="eu-card-text">Topic-by-topic explanations.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Flashcards</div>
+          <div class="eu-card-text">Fast active recall.</div>
+        </a>
 
-          <a class="eu-tile" href="#"><span>Topic Questions</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Mock Papers</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Past Papers</span><span class="eu-tileArrow">→</span></a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Topic Questions</div>
+          <div class="eu-card-text">Practice by topic.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Mock Papers</div>
+          <div class="eu-card-text">Exam-style timed practice.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Past Papers</div>
+          <div class="eu-card-text">Real papers & mark schemes.</div>
+        </a>
 
-          <a class="eu-tile" href="#"><span>Mindmaps</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Solved Papers &amp; Model Answers</span><span class="eu-tileArrow">→</span></a>
-          <a class="eu-tile" href="#"><span>Full Course</span><span class="eu-tileArrow">→</span></a>
-        </div>
-      </section>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Mindmaps</div>
+          <div class="eu-card-text">Visual topic connections.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Solved Papers</div>
+          <div class="eu-card-text">Step-by-step walkthroughs.</div>
+        </a>
+        <a class="eu-card" href="#" data-auth="signup">
+          <div class="eu-card-title">Full Course</div>
+          <div class="eu-card-text">Complete course pathway.</div>
+        </a>
+      </div>
 
-      <!-- Articles -->
-      <section class="eu-subjectBlock">
-        <h2 class="eu-h2 eu-h2-tight" id="articlesHeading">Articles and Resources for GCSE AQA Biology</h2>
+      <h2 class="eu-h2" style="margin-top: 42px;" id="articlesTitle">
+        Articles and Resources for GCSE AQA Biology
+      </h2>
 
-        <div class="eu-articlesBox">
-          <a class="eu-article" href="#">Example article/resource link 1</a>
-          <a class="eu-article" href="#">Example article/resource link 2</a>
-          <a class="eu-article" href="#">Example article/resource link 3</a>
-        </div>
-      </section>
+      <div class="eu-drawer-section" style="border-radius: 18px;">
+        <p style="margin:0; color: rgba(255,255,255,.82); font-weight:650; line-height:1.6;">
+          This is where you’ll list your articles, topic breakdowns, resources, and links for this subject.
+        </p>
+      </div>
     </div>
   </main>
 
-  <!-- FOOTER (same style as index, unchanged) -->
+  <!-- Footer small -->
   <footer class="eu-footer">
-    <div class="eu-footer-inner">
-      <div>
-        <div class="eu-footer-logoRow">
-          <img class="eu-footer-logo" src="./assets/elevateu-logo.png" alt="ElevateU logo">
-          <div class="eu-footer-brand">ElevateU</div>
-        </div>
-        <div class="eu-footer-note">Missing something? <a href="/suggestions">Let us know!</a></div>
-      </div>
-
-      <div class="eu-footer-cols">
-        <div>
-          <div class="eu-footer-title">Members</div>
-          <a class="eu-footer-link" href="/hub">Hub</a>
-          <a class="eu-footer-link" href="/account">Account</a>
-          <a class="eu-footer-link" href="/articles">Articles</a>
-          <a class="eu-footer-link" href="/faqs">FAQ’s</a>
-          <a class="eu-footer-link" href="/sign-in">Log out</a>
-        </div>
-
-        <div>
-          <div class="eu-footer-title">Company</div>
-          <a class="eu-footer-link" href="/about">About Us</a>
-          <a class="eu-footer-link" href="/jobs">Jobs</a>
-          <a class="eu-footer-link" href="/support-volunteering">Volunteering</a>
-          <a class="eu-footer-link" href="/privacy-terms">Terms</a>
-          <a class="eu-footer-link" href="/privacy-terms">Privacy</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="eu-social-row">
-          <a class="eu-social" href="#" aria-label="Social 1"></a>
-          <a class="eu-social" href="#" aria-label="Social 2"></a>
-          <a class="eu-social" href="#" aria-label="Social 3"></a>
-          <a class="eu-social" href="#" aria-label="Social 4"></a>
-        </div>
-      </div>
-    </div>
-
     <div class="eu-footer-bottom">© <span id="year"></span> ElevateU</div>
   </footer>
 
+  <!-- Exam boards popup (same as index, so dropdown subject clicks still work here too) -->
+  <div class="eu-modal" id="euModal" aria-hidden="true">
+    <div class="eu-modal-backdrop" data-modal-close></div>
+    <div class="eu-modal-dialog" role="dialog" aria-modal="true" aria-label="Exam boards">
+      <div class="eu-modal-head">
+        <div>
+          <div class="eu-modal-subject" id="euModalSubject">Subject</div>
+          <div class="eu-modal-sub">Choose an exam board</div>
+        </div>
+        <button class="eu-modal-close" type="button" aria-label="Close" data-modal-close>✕</button>
+      </div>
+      <div class="eu-modal-boards" id="euModalBoards"></div>
+    </div>
+  </div>
+
+  <script src="./header.js"></script>
   <script>
     // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // hamburger drawer
-    const burger = document.getElementById("euBurger");
-    const drawer = document.getElementById("euDrawer");
-
-    if(burger && drawer){
-      burger.addEventListener("click", () => {
-        const open = drawer.classList.toggle("show");
-        burger.classList.toggle("open", open);
-        burger.setAttribute("aria-expanded", String(open));
-        drawer.setAttribute("aria-hidden", String(!open));
-      });
-    }
-
-    // Page title from URL params
-    const params = new URLSearchParams(location.search);
+    // Parse params and set title format: LEVEL EXAMBOARD SUBJECT (in that order)
+    const params = new URLSearchParams(window.location.search);
     const level = (params.get("level") || "GCSE").toUpperCase();
     const board = (params.get("board") || "AQA").toUpperCase();
     const subject = params.get("subject") || "Biology";
 
-    const formatted = `${level} ${board} ${subject}`;
-    document.title = formatted + " | ElevateU";
-    document.getElementById("pageTitle").textContent = formatted;
-    document.getElementById("articlesHeading").textContent = `Articles and Resources for ${formatted}`;
+    const titleText = `${level} ${board} ${subject}`;
+    document.title = `${titleText} | ElevateU`;
+    document.getElementById("pageTitle").textContent = titleText;
+    document.getElementById("articlesTitle").textContent = `Articles and Resources for ${titleText}`;
 
-    // OPTIONAL: auto-spec link placeholders (you can replace later)
+    // If you want a real spec URL later, set it here based on board/subject
     const specLink = document.getElementById("specLink");
-    if(specLink){
-      specLink.href = "#";
-      specLink.textContent = "Link to specification";
+    specLink.href = "#";
+
+    // Clicking any tool card should force signup
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[data-auth="signup"]');
+      if (!a) return;
+      e.preventDefault();
+
+      const url = new URL("auth.html", window.location.href);
+      url.searchParams.set("mode", "signup");
+      url.hash = "signup";
+      window.location.href = url.toString();
+    });
+
+    // Boards modal logic (same as index)
+    const BOARDS = {
+      GCSE: ["AQA", "EDEXCEL", "OCR", "WJEC", "EDUQAS"],
+      IGCSE: ["CIE", "EDEXCEL", "OXFORD AQA"],
+      OLEVEL: ["CIE"]
+    };
+
+    const modal = document.getElementById("euModal");
+    const modalSubject = document.getElementById("euModalSubject");
+    const modalBoards = document.getElementById("euModalBoards");
+
+    function buildSubjectUrl(level, board, subject){
+      const p = new URLSearchParams({ level, board, subject });
+      return `./subject.html?${p.toString()}`;
     }
+
+    function openModal(level, subject, list){
+      modalSubject.textContent = subject;
+      modalBoards.innerHTML = "";
+
+      list.forEach(name => {
+        const link = document.createElement("a");
+        link.href = buildSubjectUrl(level, name, subject);
+        link.className = "eu-boardCard";
+        link.textContent = name;
+        modalBoards.appendChild(link);
+      });
+
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal(){
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    document.querySelectorAll("[data-modal-close]").forEach(el => {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.querySelectorAll(".eu-subject").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const raw = btn.getAttribute("data-subject") || "";
+        const [qual, subj] = raw.split("|");
+        const list =
+          (qual === "GCSE") ? BOARDS.GCSE :
+          (qual === "IGCSE") ? BOARDS.IGCSE :
+          BOARDS.OLEVEL;
+
+        openModal(qual, subj || "Subject", list);
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
   </script>
 </body>
 </html>
