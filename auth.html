@@ -2,185 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ElevateU • Auth</title>
+  <title>Sign in | ElevateU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- IMPORTANT: auth page uses auth.css -->
   <link rel="stylesheet" href="./auth.css" />
 </head>
 
 <body>
-  <main class="auth-page">
-    <!-- subtle stars layer -->
-    <div class="auth-stars" aria-hidden="true"></div>
+  <main class="auth-wrap">
+    <!-- Small brand pill -->
+    <a class="auth-brand" href="./index.html" aria-label="Back to home">
+      <img src="./assets/elevateu-logo.png" alt="ElevateU logo" />
+      <span>ElevateU</span>
+    </a>
 
-    <div class="auth-wrap">
-      <!-- small brand pill -->
-      <a class="auth-brand" href="./index.html" aria-label="Back to ElevateU">
-        <img src="./assets/elevateu-logo.png" alt="ElevateU" />
-        <span>ElevateU</span>
-      </a>
+    <section class="auth-card" role="region" aria-label="Authentication">
+      <!-- Tabs -->
+      <div class="auth-tabs" role="tablist" aria-label="Auth mode">
+        <button class="auth-tab" id="tab-signin" type="button" role="tab" aria-selected="true">Sign in</button>
+        <button class="auth-tab" id="tab-signup" type="button" role="tab" aria-selected="false">Sign up</button>
+      </div>
 
-      <!-- centered card -->
-      <section class="auth-card" aria-label="Authentication">
-        <div class="auth-tabs" role="tablist" aria-label="Sign in or Sign up">
-          <button class="auth-tab" type="button" data-tab="signin" role="tab" aria-selected="true">
-            Sign in
-          </button>
-          <button class="auth-tab" type="button" data-tab="signup" role="tab" aria-selected="false">
-            Sign up
-          </button>
+      <!-- Title -->
+      <h1 class="auth-title" id="authTitle">Welcome back</h1>
+      <p class="auth-subtitle" id="authSubtitle">Sign in using email/password or a provider.</p>
+
+      <!-- Providers -->
+      <div class="auth-providers">
+        <button class="auth-provider" type="button" data-provider="google">Continue with Google</button>
+        <button class="auth-provider" type="button" data-provider="github">Continue with GitHub</button>
+        <button class="auth-provider" type="button" data-provider="apple">Continue with Apple</button>
+        <button class="auth-provider" type="button" data-provider="discord">Continue with Discord</button>
+      </div>
+
+      <div class="auth-or"><span>OR</span></div>
+
+      <!-- Email form -->
+      <form class="auth-form" id="authForm">
+        <label class="auth-label" for="email">Email</label>
+        <input class="auth-input" id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label class="auth-label" for="password">Password</label>
+        <div class="auth-password-row">
+          <input class="auth-input" id="password" name="password" type="password" placeholder="Enter your password" required />
+          <button class="auth-eye" type="button" aria-label="Toggle password visibility">👁</button>
         </div>
 
-        <h1 class="auth-title" id="authTitle">Welcome back</h1>
-        <p class="auth-subtitle" id="authSubtitle">Sign in using email/password or a provider.</p>
-
-        <div class="auth-providers">
-          <button class="auth-provider" type="button">Continue with Google</button>
-          <button class="auth-provider" type="button">Continue with GitHub</button>
-          <button class="auth-provider" type="button">Continue with Apple</button>
-          <button class="auth-provider" type="button">Continue with Discord</button>
-        </div>
-
-        <div class="auth-or">
-          <span>OR</span>
-        </div>
-
-        <!-- SIGN IN FORM -->
-        <form class="auth-form" id="signinForm" autocomplete="on">
-          <label class="auth-label">
-            Email
-            <input class="auth-input" type="email" name="email" placeholder="you@example.com" required />
-          </label>
-
-          <label class="auth-label">
-            Password
-            <div class="auth-pass">
-              <input class="auth-input" id="signinPass" type="password" name="password" placeholder="Your password" required />
-              <button class="auth-eye" type="button" data-eye="signinPass" aria-label="Show password">👁</button>
-            </div>
-          </label>
-
-          <div class="auth-row">
-            <label class="auth-check">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </label>
-            <a class="auth-link" href="#">Forgot password?</a>
+        <!-- Confirm password only shown in signup mode -->
+        <div id="confirmWrap" style="display:none;">
+          <label class="auth-label" for="confirm">Confirm password</label>
+          <div class="auth-password-row">
+            <input class="auth-input" id="confirm" name="confirm" type="password" placeholder="Repeat your password" />
+            <button class="auth-eye" type="button" aria-label="Toggle confirm password visibility">👁</button>
           </div>
+        </div>
 
-          <button class="auth-submit" type="submit">Sign in</button>
+        <label class="auth-check">
+          <input type="checkbox" id="terms" />
+          <span>I agree to the Terms and Privacy Policy</span>
+        </label>
 
-          <p class="auth-foot">
-            New here? <a class="auth-link" href="#signup" data-jump="signup">Create an account</a>.
-          </p>
-        </form>
+        <button class="auth-submit" type="submit" id="submitBtn">Sign in</button>
 
-        <!-- SIGN UP FORM -->
-        <form class="auth-form hidden" id="signupForm" autocomplete="on">
-          <label class="auth-label">
-            Email
-            <input class="auth-input" type="email" name="email" placeholder="you@example.com" required />
-          </label>
+        <div class="auth-foot" id="authFoot">
+          New here? Use Sign up.
+        </div>
+      </form>
+    </section>
 
-          <label class="auth-label">
-            Password
-            <div class="auth-pass">
-              <input class="auth-input" id="signupPass" type="password" name="password" placeholder="Create a password" required />
-              <button class="auth-eye" type="button" data-eye="signupPass" aria-label="Show password">👁</button>
-            </div>
-          </label>
-
-          <label class="auth-label">
-            Confirm password
-            <div class="auth-pass">
-              <input class="auth-input" id="signupPass2" type="password" name="password2" placeholder="Repeat your password" required />
-              <button class="auth-eye" type="button" data-eye="signupPass2" aria-label="Show password">👁</button>
-            </div>
-          </label>
-
-          <label class="auth-check auth-check-wide">
-            <input type="checkbox" required />
-            <span>I agree to the Terms and Privacy Policy</span>
-          </label>
-
-          <button class="auth-submit" type="submit">Create account</button>
-
-          <p class="auth-foot">
-            Already have an account? <a class="auth-link" href="#signin" data-jump="signin">Use Sign in</a>.
-          </p>
-        </form>
-      </section>
-
-      <footer class="auth-copy">© <span id="year"></span> ElevateU</footer>
-    </div>
+    <footer class="auth-footer">© <span id="year"></span> ElevateU</footer>
   </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const tabs = Array.from(document.querySelectorAll(".auth-tab"));
-    const signinForm = document.getElementById("signinForm");
-    const signupForm = document.getElementById("signupForm");
+    const params = new URLSearchParams(window.location.search);
+    const tabSignin = document.getElementById("tab-signin");
+    const tabSignup = document.getElementById("tab-signup");
+
     const title = document.getElementById("authTitle");
     const subtitle = document.getElementById("authSubtitle");
+    const submitBtn = document.getElementById("submitBtn");
+    const confirmWrap = document.getElementById("confirmWrap");
+    const authFoot = document.getElementById("authFoot");
 
-    function setMode(mode) {
+    function setMode(mode){
       const isSignup = mode === "signup";
 
-      tabs.forEach(t => {
-        const selected = t.dataset.tab === mode;
-        t.setAttribute("aria-selected", selected ? "true" : "false");
-        t.classList.toggle("active", selected);
-      });
+      tabSignin.setAttribute("aria-selected", String(!isSignup));
+      tabSignup.setAttribute("aria-selected", String(isSignup));
 
-      signinForm.classList.toggle("hidden", isSignup);
-      signupForm.classList.toggle("hidden", !isSignup);
+      if (isSignup){
+        document.title = "Sign up | ElevateU";
+        title.textContent = "Create your account";
+        subtitle.textContent = "Sign up using email/password or a provider.";
+        submitBtn.textContent = "Create account";
+        confirmWrap.style.display = "";
+        authFoot.textContent = "Already have an account? Use Sign in.";
+      } else {
+        document.title = "Sign in | ElevateU";
+        title.textContent = "Welcome back";
+        subtitle.textContent = "Sign in using email/password or a provider.";
+        submitBtn.textContent = "Sign in";
+        confirmWrap.style.display = "none";
+        authFoot.textContent = "New here? Use Sign up.";
+      }
 
-      title.textContent = isSignup ? "Create your account" : "Welcome back";
-      subtitle.textContent = isSignup
-        ? "Sign up using email/password or a provider."
-        : "Sign in using email/password or a provider.";
-
-      // keep URL stable so header links work
-      location.hash = isSignup ? "signup" : "signin";
+      // keep URL in sync
+      const url = new URL(window.location.href);
+      url.searchParams.set("mode", mode);
+      url.hash = mode;
+      window.history.replaceState({}, "", url.toString());
     }
 
-    tabs.forEach(btn => btn.addEventListener("click", () => setMode(btn.dataset.tab)));
+    // initial mode
+    const initialMode = (params.get("mode") || "signin").toLowerCase();
+    setMode(initialMode === "signup" ? "signup" : "signin");
 
-    document.querySelectorAll("[data-jump]").forEach(a => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        setMode(a.dataset.jump);
-      });
-    });
+    tabSignin.addEventListener("click", () => setMode("signin"));
+    tabSignup.addEventListener("click", () => setMode("signup"));
 
-    // initial mode from hash or query
-    const params = new URLSearchParams(location.search);
-    const qMode = (params.get("mode") || "").toLowerCase();
-    const hashMode = (location.hash || "").replace("#", "").toLowerCase();
-    const initial = (qMode === "signup" || hashMode === "signup") ? "signup" : "signin";
-    setMode(initial);
-
-    // password eye toggles
-    document.querySelectorAll("[data-eye]").forEach(btn => {
+    // password toggle (both eyes)
+    document.querySelectorAll(".auth-eye").forEach(btn => {
       btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-eye");
-        const input = document.getElementById(id);
+        const input = btn.parentElement.querySelector("input");
         if (!input) return;
-        input.type = input.type === "password" ? "text" : "password";
+        input.type = (input.type === "password") ? "text" : "password";
       });
     });
 
-    // demo submit handlers (replace with real backend later)
-    signinForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Sign in submitted (demo). Hook this up to your backend/auth provider.");
+    // provider buttons (these require real OAuth backend)
+    document.querySelectorAll("[data-provider]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const provider = btn.getAttribute("data-provider");
+        alert(
+          "Provider sign-in (" + provider + ") needs backend OAuth setup.\n\n" +
+          "For now this button is just a placeholder."
+        );
+      });
     });
 
-    signupForm.addEventListener("submit", (e) => {
+    // basic form submit (placeholder)
+    document.getElementById("authForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("Sign up submitted (demo). Hook this up to your backend/auth provider.");
+
+      const mode = (new URLSearchParams(window.location.search).get("mode") || "signin").toLowerCase();
+      const email = document.getElementById("email").value.trim();
+      const pass = document.getElementById("password").value;
+
+      if (!email || !pass) {
+        alert("Please enter email + password.");
+        return;
+      }
+
+      if (mode === "signup") {
+        const confirm = document.getElementById("confirm").value;
+        if (confirm !== pass) {
+          alert("Passwords do not match.");
+          return;
+        }
+        if (!document.getElementById("terms").checked) {
+          alert("Please agree to the Terms and Privacy Policy.");
+          return;
+        }
+        alert("Signup placeholder: you would create the account on your backend here.");
+      } else {
+        alert("Signin placeholder: you would authenticate on your backend here.");
+      }
     });
   </script>
 </body>
