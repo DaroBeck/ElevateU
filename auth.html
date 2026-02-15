@@ -2,172 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sign in | ElevateU</title>
+  <title>ElevateU | Sign in</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./auth.css" />
 </head>
 
 <body>
-  <main class="auth-wrap">
-    <!-- Small brand pill -->
-    <a class="auth-brand" href="./index.html" aria-label="Back to home">
-      <img src="./assets/elevateu-logo.png" alt="ElevateU logo" />
-      <span>ElevateU</span>
+  <div class="eu-authPage">
+    <a class="eu-authBrand" href="./index.html" aria-label="Back to home">
+      <img src="./assets/elevateu-logo.png" alt="ElevateU logo" class="eu-authLogo" />
+      <span class="eu-authBrandText">ElevateU</span>
     </a>
 
-    <section class="auth-card" role="region" aria-label="Authentication">
-      <!-- Tabs -->
-      <div class="auth-tabs" role="tablist" aria-label="Auth mode">
-        <button class="auth-tab" id="tab-signin" type="button" role="tab" aria-selected="true">Sign in</button>
-        <button class="auth-tab" id="tab-signup" type="button" role="tab" aria-selected="false">Sign up</button>
-      </div>
+    <main class="eu-authCard" role="main">
+      <header class="eu-authHeader">
+        <h1 class="eu-authTitle" id="authTitle">Welcome back</h1>
+        <p class="eu-authSubtitle" id="authSubtitle">
+          Sign in using email/password or a provider.
+        </p>
+      </header>
 
-      <!-- Title -->
-      <h1 class="auth-title" id="authTitle">Welcome back</h1>
-      <p class="auth-subtitle" id="authSubtitle">Sign in using email/password or a provider.</p>
+      <!-- Tabs -->
+      <div class="eu-authTabs" role="tablist" aria-label="Authentication">
+        <button class="eu-tab is-active" type="button" role="tab" aria-selected="true" data-mode="signin">
+          Sign in
+        </button>
+        <button class="eu-tab" type="button" role="tab" aria-selected="false" data-mode="signup">
+          Sign up
+        </button>
+      </div>
 
       <!-- Providers -->
-      <div class="auth-providers">
-        <button class="auth-provider" type="button" data-provider="google">Continue with Google</button>
-        <button class="auth-provider" type="button" data-provider="github">Continue with GitHub</button>
-        <button class="auth-provider" type="button" data-provider="apple">Continue with Apple</button>
-        <button class="auth-provider" type="button" data-provider="discord">Continue with Discord</button>
-      </div>
+      <section class="eu-providerBlock" aria-label="Third party login">
+        <div class="eu-providerGrid">
+          <button class="eu-providerBtn" type="button" data-provider="google">
+            <span class="eu-providerIcon" aria-hidden="true">G</span>
+            Continue with Google
+          </button>
 
-      <div class="auth-or"><span>OR</span></div>
+          <button class="eu-providerBtn" type="button" data-provider="github">
+            <span class="eu-providerIcon" aria-hidden="true">⌂</span>
+            Continue with GitHub
+          </button>
 
-      <!-- Email form -->
-      <form class="auth-form" id="authForm">
-        <label class="auth-label" for="email">Email</label>
-        <input class="auth-input" id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button class="eu-providerBtn" type="button" data-provider="apple">
+            <span class="eu-providerIcon" aria-hidden="true"></span>
+            Continue with Apple
+          </button>
 
-        <label class="auth-label" for="password">Password</label>
-        <div class="auth-password-row">
-          <input class="auth-input" id="password" name="password" type="password" placeholder="Enter your password" required />
-          <button class="auth-eye" type="button" aria-label="Toggle password visibility">👁</button>
+          <button class="eu-providerBtn" type="button" data-provider="discord">
+            <span class="eu-providerIcon" aria-hidden="true">◒</span>
+            Continue with Discord
+          </button>
         </div>
 
-        <!-- Confirm password only shown in signup mode -->
-        <div id="confirmWrap" style="display:none;">
-          <label class="auth-label" for="confirm">Confirm password</label>
-          <div class="auth-password-row">
-            <input class="auth-input" id="confirm" name="confirm" type="password" placeholder="Repeat your password" />
-            <button class="auth-eye" type="button" aria-label="Toggle confirm password visibility">👁</button>
+        <div class="eu-divider">
+          <span>or</span>
+        </div>
+      </section>
+
+      <!-- Email + Password -->
+      <form class="eu-form" id="authForm" autocomplete="on" novalidate>
+        <div class="eu-field">
+          <label class="eu-label" for="email">Email</label>
+          <input class="eu-input" id="email" name="email" type="email" placeholder="you@example.com" required />
+          <div class="eu-help" id="emailHelp" aria-live="polite"></div>
+        </div>
+
+        <div class="eu-field">
+          <label class="eu-label" for="password">Password</label>
+          <div class="eu-passwordRow">
+            <input class="eu-input" id="password" name="password" type="password" placeholder="••••••••" required minlength="6" />
+            <button class="eu-eye" type="button" id="togglePw" aria-label="Show password">👁</button>
           </div>
+          <div class="eu-help" id="passwordHelp" aria-live="polite"></div>
         </div>
 
-        <label class="auth-check">
-          <input type="checkbox" id="terms" />
-          <span>I agree to the Terms and Privacy Policy</span>
-        </label>
+        <div class="eu-row">
+          <label class="eu-check">
+            <input type="checkbox" id="remember" />
+            <span>Remember me</span>
+          </label>
 
-        <button class="auth-submit" type="submit" id="submitBtn">Sign in</button>
-
-        <div class="auth-foot" id="authFoot">
-          New here? Use Sign up.
+          <a class="eu-link" href="./forgot-password.html">Forgot password?</a>
         </div>
+
+        <button class="eu-primary" type="submit" id="submitBtn">
+          Sign in
+        </button>
+
+        <p class="eu-footnote" id="footnote">
+          New here? Create an account to personalise your learning.
+        </p>
       </form>
-    </section>
+    </main>
 
-    <footer class="auth-footer">© <span id="year"></span> ElevateU</footer>
-  </main>
+    <footer class="eu-authFooter">
+      <small>© <span id="year"></span> ElevateU</small>
+    </footer>
+  </div>
 
   <script>
+    // --------- CONFIG (edit routes here) ---------
+    const ROUTES = {
+      hub: "./hub.html",                    // returning users go here
+      personalisation: "./personalisation.html", // new users go here
+      providerCallback: "./oauth-callback.html"  // optional placeholder
+    };
+
+    // Set year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const params = new URLSearchParams(window.location.search);
-    const tabSignin = document.getElementById("tab-signin");
-    const tabSignup = document.getElementById("tab-signup");
-
+    // Mode switching
+    const tabs = document.querySelectorAll(".eu-tab");
     const title = document.getElementById("authTitle");
     const subtitle = document.getElementById("authSubtitle");
     const submitBtn = document.getElementById("submitBtn");
-    const confirmWrap = document.getElementById("confirmWrap");
-    const authFoot = document.getElementById("authFoot");
+    const footnote = document.getElementById("footnote");
 
-    function setMode(mode){
-      const isSignup = mode === "signup";
+    let mode = "signin"; // "signin" | "signup"
 
-      tabSignin.setAttribute("aria-selected", String(!isSignup));
-      tabSignup.setAttribute("aria-selected", String(isSignup));
+    function setMode(nextMode){
+      mode = nextMode;
 
-      if (isSignup){
-        document.title = "Sign up | ElevateU";
-        title.textContent = "Create your account";
-        subtitle.textContent = "Sign up using email/password or a provider.";
-        submitBtn.textContent = "Create account";
-        confirmWrap.style.display = "";
-        authFoot.textContent = "Already have an account? Use Sign in.";
-      } else {
-        document.title = "Sign in | ElevateU";
+      tabs.forEach(t => {
+        const active = t.dataset.mode === mode;
+        t.classList.toggle("is-active", active);
+        t.setAttribute("aria-selected", String(active));
+      });
+
+      if(mode === "signin"){
+        document.title = "ElevateU | Sign in";
         title.textContent = "Welcome back";
         subtitle.textContent = "Sign in using email/password or a provider.";
         submitBtn.textContent = "Sign in";
-        confirmWrap.style.display = "none";
-        authFoot.textContent = "New here? Use Sign up.";
+        footnote.textContent = "New here? Create an account to personalise your learning.";
+      }else{
+        document.title = "ElevateU | Sign up";
+        title.textContent = "Create your account";
+        subtitle.textContent = "Sign up using email/password or a provider.";
+        submitBtn.textContent = "Sign up";
+        footnote.textContent = "Already have an account? Sign in instead.";
       }
 
-      // keep URL in sync
-      const url = new URL(window.location.href);
-      url.searchParams.set("mode", mode);
-      url.hash = mode;
-      window.history.replaceState({}, "", url.toString());
+      clearErrors();
     }
 
-    // initial mode
-    const initialMode = (params.get("mode") || "signin").toLowerCase();
-    setMode(initialMode === "signup" ? "signup" : "signin");
+    tabs.forEach(t => t.addEventListener("click", () => setMode(t.dataset.mode)));
 
-    tabSignin.addEventListener("click", () => setMode("signin"));
-    tabSignup.addEventListener("click", () => setMode("signup"));
-
-    // password toggle (both eyes)
-    document.querySelectorAll(".auth-eye").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const input = btn.parentElement.querySelector("input");
-        if (!input) return;
-        input.type = (input.type === "password") ? "text" : "password";
-      });
+    // Password toggle
+    const pw = document.getElementById("password");
+    const togglePw = document.getElementById("togglePw");
+    togglePw.addEventListener("click", () => {
+      const isPw = pw.type === "password";
+      pw.type = isPw ? "text" : "password";
+      togglePw.textContent = isPw ? "🙈" : "👁";
+      togglePw.setAttribute("aria-label", isPw ? "Hide password" : "Show password");
     });
 
-    // provider buttons (these require real OAuth backend)
+    // Basic validation UI
+    const email = document.getElementById("email");
+    const emailHelp = document.getElementById("emailHelp");
+    const pwHelp = document.getElementById("passwordHelp");
+
+    function clearErrors(){
+      emailHelp.textContent = "";
+      pwHelp.textContent = "";
+      email.classList.remove("is-error");
+      pw.classList.remove("is-error");
+    }
+
+    function validate(){
+      clearErrors();
+      let ok = true;
+
+      if(!email.value.trim() || !email.checkValidity()){
+        ok = false;
+        email.classList.add("is-error");
+        emailHelp.textContent = "Please enter a valid email address.";
+      }
+
+      if(!pw.value.trim() || pw.value.length < 6){
+        ok = false;
+        pw.classList.add("is-error");
+        pwHelp.textContent = "Password must be at least 6 characters.";
+      }
+
+      return ok;
+    }
+
+    // --------- AUTH FLOW (stubbed) ---------
+    // Replace these with real backend checks later.
+    function isReturningUser(emailValue){
+      // Demo logic:
+      // - any email ending with "@returning.com" is treated as returning user
+      // - everything else is treated as new user
+      return emailValue.toLowerCase().endsWith("@returning.com");
+    }
+
+    function redirectAfterAuth(emailValue){
+      // If new user -> personalisation questionnaire
+      // If returning -> hub
+      const returning = isReturningUser(emailValue);
+      window.location.href = returning ? ROUTES.hub : ROUTES.personalisation;
+    }
+
+    // Form submit
+    const form = document.getElementById("authForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if(!validate()) return;
+
+      // In real life:
+      // - mode === "signup": create user, then send to personalisation
+      // - mode === "signin": sign in, then send to hub
+      // Here we follow your rule: new user -> personalisation, returning -> hub.
+      redirectAfterAuth(email.value.trim());
+    });
+
+    // Provider buttons
     document.querySelectorAll("[data-provider]").forEach(btn => {
       btn.addEventListener("click", () => {
         const provider = btn.getAttribute("data-provider");
-        alert(
-          "Provider sign-in (" + provider + ") needs backend OAuth setup.\n\n" +
-          "For now this button is just a placeholder."
-        );
+
+        // In real life, you’d redirect to your OAuth endpoint like:
+        // window.location.href = `/auth/${provider}`;
+        // For now we simulate:
+        // - Providers also follow your rule: new -> personalisation, returning -> hub
+        // We'll just send to a placeholder callback.
+        const params = new URLSearchParams({ provider });
+        window.location.href = `${ROUTES.providerCallback}?${params.toString()}`;
       });
-    });
-
-    // basic form submit (placeholder)
-    document.getElementById("authForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const mode = (new URLSearchParams(window.location.search).get("mode") || "signin").toLowerCase();
-      const email = document.getElementById("email").value.trim();
-      const pass = document.getElementById("password").value;
-
-      if (!email || !pass) {
-        alert("Please enter email + password.");
-        return;
-      }
-
-      if (mode === "signup") {
-        const confirm = document.getElementById("confirm").value;
-        if (confirm !== pass) {
-          alert("Passwords do not match.");
-          return;
-        }
-        if (!document.getElementById("terms").checked) {
-          alert("Please agree to the Terms and Privacy Policy.");
-          return;
-        }
-        alert("Signup placeholder: you would create the account on your backend here.");
-      } else {
-        alert("Signin placeholder: you would authenticate on your backend here.");
-      }
     });
   </script>
 </body>
