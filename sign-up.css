@@ -1,0 +1,244 @@
+:root {
+  --bg: #04042f;
+  --bg2: #030325;
+  --card: rgba(3, 3, 36, 0.92);
+  --chip: rgba(255, 255, 255, 0.08);
+  --chip-active: rgba(255, 255, 255, 0.16);
+  --line: rgba(255, 255, 255, 0.18);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 1px, transparent 2px) 0 0 / 320px 320px,
+    radial-gradient(circle at 90% 30%, rgba(255, 255, 255, 0.14) 1px, transparent 2px) 0 0 / 280px 280px,
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+a {
+  color: inherit;
+}
+
+.auth-page {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 60px 20px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 26px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.brand-pill img {
+  width: 62px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-pill span {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.card {
+  width: min(980px, 100%);
+  border-radius: 34px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 32px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  text-align: center;
+  padding: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  font-size: 42px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tab.is-active {
+  background: var(--chip-active);
+}
+
+h1 {
+  margin: 0;
+  font-size: 78px;
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 10px 0 24px;
+  color: var(--muted);
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.provider-btn,
+input,
+.eye,
+.create-btn {
+  border: 1px solid var(--line);
+  background: var(--chip);
+  color: var(--text);
+  border-radius: 24px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.provider-btn {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 18px 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+}
+
+.signup-form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 20px 26px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.password-row {
+  display: grid;
+  grid-template-columns: 1fr 82px;
+  gap: 10px;
+}
+
+.eye {
+  cursor: pointer;
+}
+
+.checkbox-row {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 46px;
+}
+
+.checkbox-row input {
+  width: 32px;
+  height: 32px;
+}
+
+.create-btn {
+  margin-top: 10px;
+  padding: 20px;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.06));
+}
+
+.footnote {
+  margin: 18px 0 0;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+footer {
+  color: var(--muted);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .brand-pill span,
+  .tab,
+  .provider-btn,
+  input,
+  .create-btn {
+    font-size: clamp(16px, 2.5vw, 32px);
+  }
+
+  h1 {
+    font-size: clamp(34px, 6vw, 62px);
+  }
+
+  .subtitle,
+  label,
+  .checkbox-row,
+  .footnote,
+  footer,
+  .divider {
+    font-size: clamp(15px, 2.2vw, 28px);
+  }
+
+  .password-row {
+    grid-template-columns: 1fr 56px;
+  }
+
+  .provider-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
