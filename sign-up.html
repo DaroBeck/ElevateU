@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ElevateU | Sign up</title>
+  <link rel="stylesheet" href="./sign-up.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <a class="brand-pill" href="./index.html" aria-label="Back to home">
+      <img src="./assets/elevateu-logo.png" alt="ElevateU logo" />
+      <span>ElevateU</span>
+    </a>
+
+    <main class="card" role="main">
+      <div class="tabs" role="tablist" aria-label="Authentication mode">
+        <a class="tab" href="./auth.html">Sign in</a>
+        <button class="tab is-active" type="button" aria-selected="true">Sign up</button>
+      </div>
+
+      <h1>Create your account</h1>
+      <p class="subtitle">Sign up using email/password or a provider.</p>
+
+      <div class="provider-grid">
+        <button type="button" class="provider-btn">Continue with Google</button>
+        <button type="button" class="provider-btn">Continue with GitHub</button>
+        <button type="button" class="provider-btn">Continue with Apple</button>
+        <button type="button" class="provider-btn">Continue with Discord</button>
+      </div>
+
+      <div class="divider"><span>OR</span></div>
+
+      <form class="signup-form" novalidate>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+
+        <label for="password">Password</label>
+        <div class="password-row">
+          <input id="password" type="password" placeholder="Create a password" required minlength="6" />
+          <button type="button" class="eye" data-toggle="password" aria-label="Show password">👁</button>
+        </div>
+
+        <label for="confirmPassword">Confirm password</label>
+        <div class="password-row">
+          <input id="confirmPassword" type="password" placeholder="Repeat your password" required minlength="6" />
+          <button type="button" class="eye" data-toggle="confirmPassword" aria-label="Show password">👁</button>
+        </div>
+
+        <label class="checkbox-row" for="agree">
+          <input id="agree" type="checkbox" required />
+          <span>I agree to the Terms and Privacy Policy</span>
+        </label>
+
+        <button class="create-btn" type="submit">Create account</button>
+      </form>
+
+      <p class="footnote">Already have an account? <a href="./auth.html">Use Sign in.</a></p>
+    </main>
+
+    <footer>© <span id="year"></span> ElevateU</footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("[data-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const input = document.getElementById(button.dataset.toggle);
+        if (!input) return;
+        const reveal = input.type === "password";
+        input.type = reveal ? "text" : "password";
+        button.setAttribute("aria-label", reveal ? "Hide password" : "Show password");
+      });
+    });
+  </script>
+</body>
+</html>
